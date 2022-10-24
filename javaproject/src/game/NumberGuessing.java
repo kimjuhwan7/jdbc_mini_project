@@ -66,7 +66,7 @@ public class NumberGuessing {
 			
 			if(life==0) {
 				System.out.println("기회를 모두 소진하였습니다. ");
-				System.out.println("숫자는 " + randomNumber + "이었습니다. ");
+				System.out.println("정답은 " + randomNumber + "이었습니다. ");
 				state = STATE.GAMEOVER;
 			}
 			
