@@ -1,8 +1,8 @@
-package rank;
+package rank.controller;
 
 import generic.GenericCommand;
 
-public class RankInsert implements GenericCommand{
+public class RankDelete implements GenericCommand{
 
 	@Override
 	public void function() {
