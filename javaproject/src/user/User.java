@@ -6,20 +6,20 @@ public class User
 	private String id;
 	private String password;
 	private String nickname;
-	private boolean admin;
+	private int isAdmin;
 	
 	User()
 	{
 		
 	}
 	
-	User(int usernum, String id, String password, String nickname, boolean isAdmin)
+	User(int usernum, String id, String password, String nickname, int isAdmin)
 	{
 		this.usernum = usernum;
 		this.id = id;
 		this.password = password;
 		this.nickname = nickname;
-		this.admin = isAdmin;
+		this.isAdmin = isAdmin;
 	}
 	
 	public int getUsernum() {
@@ -46,11 +46,11 @@ public class User
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public boolean isAdmin() {
-		return admin;
+	public int isAdmin() {
+		return isAdmin;
 	}
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public void setAdmin(int isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 	
 	
