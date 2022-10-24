@@ -47,13 +47,13 @@ public class NumberGuessing {
 				
 				System.out.println("숫자는 " + playerNumber + "보다 작습니다. ");
 				life--;
-				System.out.println("남은 기회는 " + life + "번 입니다. ");
+				System.out.println("남은 기회는 " + life + "번 입니다. \n");
 				
 			} else if(playerNumber<randomNumber) {
 				
 				System.out.println("숫자는 " + playerNumber + "보다 큽니다. ");
 				life--;
-				System.out.println("남은 기회는 " + life + "번 입니다. ");
+				System.out.println("남은 기회는 " + life + "번 입니다. \n");
 
 			} else if(playerNumber==randomNumber) {
 				
@@ -90,7 +90,7 @@ public class NumberGuessing {
 	}
 
 	private static void exitGame() {
-		System.out.println("GAME OVER");
+		System.out.println("\nGAME OVER");
 		System.out.println("수고하셨습니다. 최종 점수는 " + score + "점 입니다.");
 	}
 	
