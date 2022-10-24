@@ -14,6 +14,8 @@ public class Main {
 			menu();
 			System.out.println("메뉴를 입력하세요. >>");
 			int select = Integer.parseInt(sc.nextLine());
+			
+			command.command.get(select).process();
 
 		}
 	}
