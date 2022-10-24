@@ -17,15 +17,16 @@ public class Hi99 extends Thread {
 	static int start_count = 30;// 잔여시간
 
 	@Override
-	public void run() {
+	public void run() {// 스레드
 		while (start_count > count_down) {
 			start_count--;
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(1000);// 1초
 			} catch (InterruptedException e) {
 
 			}
 		}
+		// start_count 끝나면 실행
 		System.out.println("시간이 종료 되었습니다.");
 		System.out.println("총 스코어 " + score + "입니다. 축하합니다");
 	}
@@ -39,17 +40,14 @@ public class Hi99 extends Thread {
 		System.out.println(start_count + "초 동안 문제를 빠르게 풀어주세요");
 		System.out.println("시작!");
 
-		thread.start();
+		thread.start();// 스레드 실행 (run)
 		while (true) {
 			x = random.nextInt(9) + 1;
 			y = random.nextInt(9) + 1;
-			answer = x * y;
+			answer = x * y;// 곱셈 결과 값
 
 			System.out.print(x + " x " + y + " => ");
 
-//----------------------------------------------------
-//첫번째 실행 후 사용자가 입력하면 첫번째 스레드를 멈추고    결과 출력 후 2번째 스레드 시작해야함
-// ----------------------------------------------------
 			z = sc.nextInt();// 사용자 입력
 
 			if (z == answer) {
