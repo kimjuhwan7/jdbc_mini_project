@@ -3,8 +3,10 @@ package game;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Hi99 extends Thread {
+//Hi99 hi = new Hi99();
+//hi.hi_start();
 
+public class Hi99 extends Thread {
 	static int x;// 앞자리
 	static int y;// 뒷자리
 	static int z;// 사용자입력값
@@ -12,7 +14,7 @@ public class Hi99 extends Thread {
 	static int score;// 총점
 	static int plus = 10;// 추가점수
 	static int count_down = 0;// 카운트 다운
-	static int start_count = 5;// 잔여시간
+	static int start_count = 30;// 잔여시간
 
 	@Override
 	public void run() {
@@ -28,7 +30,7 @@ public class Hi99 extends Thread {
 		System.out.println("총 스코어 " + score + "입니다. 축하합니다");
 	}
 
-	public static void main(String[] args) {
+	public void hi_start() {
 		Random random = new Random();
 		Scanner sc = new Scanner(System.in);
 		Hi99 thread = new Hi99();
@@ -39,8 +41,8 @@ public class Hi99 extends Thread {
 
 		thread.start();
 		while (true) {
-			x = random.nextInt(2) + 1;
-			y = random.nextInt(2) + 1;
+			x = random.nextInt(9) + 1;
+			y = random.nextInt(9) + 1;
 			answer = x * y;
 
 			System.out.print(x + " x " + y + " => ");
@@ -55,7 +57,7 @@ public class Hi99 extends Thread {
 				System.out.println("정답입니다! " + plus + "점 추가 " + " 총점 =>" + score);
 
 			} else if (z != answer) {
-				System.out.println("오답입니다! 정답은 : " + answer + "점 입니다");
+				System.out.println("오답입니다! 정답은 : " + answer + " 입니다");
 
 			}
 		}
