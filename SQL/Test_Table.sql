@@ -14,11 +14,12 @@ CREATE TABLE  Game (
   genre       VARCHAR2(50) NOT NULL
 );
 
+CREATE SEQUENCE RANK_INDEX INCREMENT BY 1 START WITH 0;
 
 CREATE TABLE Rank (
-  rankindex NUMBER(4) PRIMARY KEY,    
-  exploiternum  NUMBER(4) REFERENCES exploiter(exploiternum),
-  serialnum  NUMBER(4) REFERENCES Game(serialnum),
+  rankindex NUMBER(4) PRIMARY KEY,
+  exploiternum  NUMBER(4) REFERENCES exploiter(exploiternum) NOT NULL,
+  serialnum  NUMBER(4) REFERENCES Game(serialnum) NOT NULL,
   score NUMBER(8) NOT NULL ,
   cleartime DATE NOT NULL
 );

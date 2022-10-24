@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import generic.GenericCommand;
-import rank.controller.RankDelete;
-import rank.controller.RankInsert;
+import rank.controller.RankDeleteController;
+import rank.controller.RankInsertController;
 
 public class RankCommand {
 
@@ -24,11 +24,11 @@ public class RankCommand {
 	private RankCommand()
 	{
 		command = new LinkedList<>();
-		if(!command.add(new RankInsert()))
+		if(!command.add(new RankInsertController()))
 		{
 			System.out.println("명령 추가 실패");
 		}
-		if(!command.add(new RankDelete()))
+		if(!command.add(new RankDeleteController()))
 		{
 			System.out.println("명령 추가 실패");			
 		}
