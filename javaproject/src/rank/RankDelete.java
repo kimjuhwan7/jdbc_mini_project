@@ -2,7 +2,7 @@ package rank;
 
 import generic.GenericCommand;
 
-public class RankInsert implements GenericCommand{
+public class RankDelete implements GenericCommand{
 
 	@Override
 	public void function() {

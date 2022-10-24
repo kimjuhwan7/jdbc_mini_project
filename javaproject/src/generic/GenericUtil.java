@@ -1,4 +1,4 @@
-package genericutil;
+package generic;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
