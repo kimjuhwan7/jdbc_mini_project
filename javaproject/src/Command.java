@@ -1,16 +1,17 @@
-import java.lang.ModuleLayer.Controller;
 import java.util.HashMap;
 import java.util.Map;
+import exploiter.controller.Controller;
+import exploiter.controller.ExitController;
 
-public class Commend {
+public class Command {
 	public Map<Integer, Controller> commend;
 
-	public Commend() {
+	public Command() {
 		commend = new HashMap<>();
 
 		// commend.put(1, new 로그인());
 		// commend.put(2, new 회원가입());
-		// commend.put(3, new 프로그램종료());
+		commend.put(3, new ExitController());
 
 	}
 
