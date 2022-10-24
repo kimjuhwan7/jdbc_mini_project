@@ -4,6 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import generic.GenericCommand;
+import rank.controller.RankDelete;
+import rank.controller.RankInsert;
 
 public class RankCommand {
 
