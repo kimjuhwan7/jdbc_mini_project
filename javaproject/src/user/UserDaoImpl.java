@@ -67,7 +67,7 @@ public class UserDaoImpl implements UserDao {
 	
 	private User rowToUser(ResultSet rs) throws SQLException {
 
-		return new User(rs.getInt("usernum"), rs.getString("id"), rs.getString("password"), rs.getString("nickname"), rs.getBoolean("isAdmin"));
+		return new User(rs.getInt("usernum"), rs.getString("id"), rs.getString("password"), rs.getString("nickname"), rs.getInt("isAdmin"));
 
 	}
 	
