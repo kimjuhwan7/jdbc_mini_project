@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class NumberGuessing {
 	
 	private static int score = 0; // 점수(누적)
-	private static int life = 3; // 시도횟수 한도
+	private static int life = 5; // 시도횟수 한도
 	
 	private enum STATE{START, RESET, PLAY, GAMEOVER, EXIT};
 	private static STATE state= STATE.START;
@@ -25,11 +25,12 @@ public class NumberGuessing {
 	private static void resetGame() {
 		
 		System.out.println("============================================");
+		System.out.println("숫자 입력 >> ");
 
-		life = 3;
+		life = 5;
 		randomNumber = ran.nextInt(100) + 1;
 		
-		System.out.println(randomNumber); // 확인용
+		// System.out.println(randomNumber); // 확인용
 		
 		state = STATE.PLAY;
 	}
