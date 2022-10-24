@@ -25,11 +25,12 @@ public class NumberGuessing {
 	private static void resetGame() {
 		
 		System.out.println("============================================");
+		System.out.println("숫자 입력 >> ");
 
 		life = 3;
 		randomNumber = ran.nextInt(100) + 1;
 		
-		System.out.println(randomNumber); // 확인용
+		// System.out.println(randomNumber); // 확인용
 		
 		state = STATE.PLAY;
 	}
