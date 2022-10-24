@@ -1,8 +1,12 @@
+package AgameMain;
+
 import java.util.Scanner;
 
 import exploiter.Exploiter;
 //Main
 //메인
+
+//패키지 위로 보내려고 앞에 A붙임(수정가능)
 public class Main {
 	public static Scanner sc = new Scanner(System.in);// 다회용 스케너
 	public static Exploiter user; // 로그인 정보 저장용
