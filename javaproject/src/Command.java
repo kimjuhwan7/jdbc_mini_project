@@ -3,6 +3,8 @@ import java.util.Map;
 import exploiter.controller.Controller;
 import exploiter.controller.ExitController;
 
+//Main.Command
+//메인.커멘드
 public class Command {
 	public Map<Integer, Controller> command;
 
