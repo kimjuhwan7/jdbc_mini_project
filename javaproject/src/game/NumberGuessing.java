@@ -1,5 +1,6 @@
 package game;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -42,9 +43,20 @@ public class NumberGuessing {
 		while(life>0) {
 			
 			Scanner sc = new Scanner(System.in);
+			int playerNumber;
 			
-			int playerNumber = sc.nextInt();
-
+			try {
+				playerNumber = sc.nextInt();
+				if(!(playerNumber>0 && playerNumber <101)) {
+					System.out.println("1부터 100까지의 숫자만 입력 가능합니다. ");
+					continue;	
+				}
+				
+			} catch(InputMismatchException e) {
+				System.out.println("1부터 100까지의 숫자만 입력 가능합니다. ");
+				continue;
+			} 
+			
 			if(playerNumber>randomNumber) {
 				
 				System.out.println("숫자는 " + playerNumber + "보다 작습니다. ");
