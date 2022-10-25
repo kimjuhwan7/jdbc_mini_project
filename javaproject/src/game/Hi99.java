@@ -21,7 +21,7 @@ public class Hi99 extends Thread {
 	static int plus = 10;// 추가점수
 	static int count_down = 0;// 카운트 다운
 	static int start_count = 30;// 잔여시간
-	static int serial = 2;// 게임 시리얼넘버
+	static int serial_num = 2;// 게임 시리얼넘버
 
 	@Override
 	public void run() {// 스레드
