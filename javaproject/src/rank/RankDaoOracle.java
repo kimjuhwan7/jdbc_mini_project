@@ -128,7 +128,7 @@ public class RankDaoOracle implements RankDao{
 			pstmt.setDouble(1, rnk.getSerialNum());
 			pstmt.setInt(2, rnk.getExploiterNum());
 			pstmt.setInt(3, rnk.getScore());
-			pstmt.setDate(4, rnk.getCleartime());
+			pstmt.setString(4, rnk.getCleartime());
 		
 			result = pstmt.executeUpdate();
 		}
