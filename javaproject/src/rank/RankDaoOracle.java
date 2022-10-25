@@ -122,7 +122,7 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "insert into Rank value(RANK_INDEX,?,?,?,?)";
+			sql = "insert into Rank value(RANK_INDEX.NEXTVAL,?,?,?,?)";
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setDouble(1, rnk.getSerialNum());
