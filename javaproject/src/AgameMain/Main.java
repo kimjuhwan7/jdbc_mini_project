@@ -20,9 +20,11 @@ public class Main {
 		while (true) {
 			menu();
 			System.out.println("메뉴를 입력하세요. >>");
+			
 			int select = Integer.parseInt(sc.nextLine());
+			String test = "menu";
 
-			command.command.get(select).process();
+			command.command.get(test).get(select).process();
 
 		}
 	}
