@@ -2,7 +2,6 @@ package rank.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 import generic.GenericUtil;
 import rank.Rank;

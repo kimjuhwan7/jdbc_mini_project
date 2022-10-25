@@ -2,13 +2,11 @@ package rank.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import generic.GenericUtil;
 import rank.Rank;
 import rank.RankDao;
-import rank.RankDaoOracle;
 
 public class RankSelectService {
 
