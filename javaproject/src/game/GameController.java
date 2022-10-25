@@ -1,12 +1,5 @@
 package game;
 
-<<<<<<< Updated upstream
-import AgameMain.Main;
-
-public class GameController {
-
-}
-=======
 import java.util.List;
 
 import AgameMain.Main;
@@ -56,4 +49,3 @@ public class GameController implements Controller {
 	}
 
 }
->>>>>>> Stashed changes
