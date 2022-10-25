@@ -1,14 +1,16 @@
 package rank;
 
+import java.time.LocalDate;
+
 public class Rank {
 	private int serialnum;
 	private int exploiternum;
 	private int score;
-	private String cleartime;
+	private LocalDate cleartime;
 	private String nickname = null;
 	private String gamename = null;
 	
-	public Rank(int serialnum, int exploiternum, int score, String cleartime)
+	public Rank(int serialnum, int exploiternum, int score, LocalDate cleartime)
 	{
 		this.serialnum = serialnum;
 		this.exploiternum = exploiternum;
@@ -45,11 +47,11 @@ public class Rank {
 		this.score = score;
 	}
 	
-	public String getCleartime() {
+	public LocalDate getCleartime() {
 		return cleartime;
 	}
 	
-	public void setCleartime(String cleartime) {
+	public void setCleartime(LocalDate cleartime) {
 		this.cleartime = cleartime;
 	}
 	
