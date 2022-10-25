@@ -10,6 +10,8 @@ import exploiter.controller.ExitController;
 import exploiter.controller.InsertController;
 import exploiter.controller.LogInController;
 import exploiter.controller.Log_outController;
+import exploiter.controller.ResearchByIdController;
+import exploiter.controller.SelectController;
 import exploiter.controller.UpdateController;
 import rank.controller.RankDeleteController;
 import rank.controller.RankInsertController;
@@ -47,6 +49,8 @@ public class Command {
 		admin.add(null);
 		admin.add(new UpdateController()); // 회원수정
 		admin.add(new DeleteController()); //회원삭제
+		admin.add(new SelectController()); // 회원출력
+		admin.add(new ResearchByIdController()); // 회원검색
 //		admin.add(new RankResearchController()); // 랭크검색
 //		admin.add(new RankDeleteController()); // 랭크삭제
 //		admin.add(new RankInsertController()); // 랭크수정
