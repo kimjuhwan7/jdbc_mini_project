@@ -17,17 +17,15 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		Command command = AgameMain.Command.GetInstance();
-
 		while (true) {
-			menu();
-			System.out.println("메뉴를 입력하세요. >>");
 			
-			int select = Integer.parseInt(sc.nextLine());
-			String test = "menu";
-
-			command.command.get(test).get(select).process();
-
+			if(Main.user==null) {
+				Command.menuCommand();
+			} else if(Main.user.getAdmin() == 0) {
+				Command.userCommand();
+			} else if(Main.user.getAdmin() == 1) {
+				Command.adminCommand();
+			}
 		}
 	}
 

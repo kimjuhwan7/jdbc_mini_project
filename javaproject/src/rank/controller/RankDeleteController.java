@@ -3,7 +3,7 @@ package rank.controller;
 import AgameMain.Main;
 import rank.service.RankDeleteService;
 
-public class RankDeleteController{
+public class RankDeleteController implements exploiter.controller.Controller{
 
 	
 	private static RankResearchController instance = new RankResearchController();
@@ -18,8 +18,8 @@ public class RankDeleteController{
 	
 	RankDeleteService service = new RankDeleteService();
 	
-	
-	public void function() {
+	@Override
+	public void process() {
 		// TODO Auto-generated method stub
 		
 		System.out.println("제거할 랭킹 데이터를 선택하세요");

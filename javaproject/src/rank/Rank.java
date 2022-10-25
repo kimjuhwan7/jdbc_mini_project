@@ -65,13 +65,14 @@ public class Rank {
 	public String toString() {
 		// TODO Auto-generated method stub
 		if(nickname != null)
-			return "이름: "+ this.nickname +  "클리어 점수 : " + this.score + "클리어 일 : " + this.cleartime;
+			return "이름: "+ this.nickname +  "\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
 		
 		else if (gamename != null)
-			return "게임 명 : "+ this.nickname +  "클리어 점수 : " + this.score + "클리어 일 : " + this.cleartime;
+			return "게임 명 : "+ this.nickname +  "\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
 		
 		else
-			return "클리어 점수 : " + this.score + "클리어 일 : " + this.cleartime;
+			return "클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
+		
 	}
 
 	

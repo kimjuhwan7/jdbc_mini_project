@@ -29,7 +29,7 @@ public class RankDaoOracle implements RankDao{
 		
 			while(rs.next())
 			{
-				list.add(new Rank( rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
+				list.add(new Rank(rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
 			}
 		}
 		finally 
@@ -89,7 +89,7 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "select (select gamename from game where rank.serialnum = game.serialnum), Rank.* from Rank  where serialnum = ? order by score";
+			sql = "select (select gamename from game where rank.serialnum = game.serialnum) as gamename, Rank.* from Rank  where serialnum = ? order by score";
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, serialnum);
