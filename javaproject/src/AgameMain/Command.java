@@ -13,6 +13,7 @@ import exploiter.controller.Log_outController;
 import exploiter.controller.ResearchByIdController;
 import exploiter.controller.SelectController;
 import exploiter.controller.UpdateController;
+import game.GameController;
 import rank.controller.RankDeleteController;
 import rank.controller.RankInsertController;
 import rank.controller.RankResearchController;
@@ -84,7 +85,21 @@ public class Command {
 		Main.userMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
-		int select = Integer.parseInt(Main.sc.nextLine());
+		int select=0;
+		
+		try {
+			
+		select = Integer.parseInt(Main.sc.nextLine());
+		
+		if(select < 1 || select > 5) {
+			throw new Exception();
+			
+		}
+		
+		} catch(Exception e){
+			System.out.println("1~5 사이의 값을 입력해주세요.");
+		}
+		
 		String user = "user";
 		command.command.get(user).get(select).process();
 		
@@ -95,7 +110,22 @@ public class Command {
 		Main.adminMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
-		int select = Integer.parseInt(Main.sc.nextLine());
+		
+		int select = 0;
+		
+		try {
+			
+			select = Integer.parseInt(Main.sc.nextLine());
+			
+			if(select < 1 || select > 8) {
+				throw new Exception();
+				
+			}
+			
+			} catch(Exception e){
+				System.out.println("1~5 사이의 값을 입력해주세요.");
+			}
+		
 		String user = "admin";
 		command.command.get(user).get(select).process();
 		
@@ -105,7 +135,22 @@ public class Command {
 		Main.menu();
 		
 		Command command = AgameMain.Command.GetInstance();
-		int select = Integer.parseInt(Main.sc.nextLine());
+		
+		int select = 0;
+		
+		try {
+			
+			select = Integer.parseInt(Main.sc.nextLine());
+			
+			if(select < 1 || select > 3) {
+				throw new Exception();
+				
+			}
+			
+			} catch(Exception e){
+				System.out.println("1~5 사이의 값을 입력해주세요.");
+			}
+		
 		command.command.get("menu").get(select).process();
 	}
 	

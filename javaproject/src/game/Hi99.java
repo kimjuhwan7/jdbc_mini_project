@@ -1,7 +1,6 @@
 package game;
 
 import java.util.Random;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import AgameMain.Main;
@@ -13,7 +12,6 @@ import rank.controller.RankResearchController;
 
 public class Hi99 extends Thread {
 	Random random = new Random();
-	Scanner sc = new Scanner(System.in);
 	String pattern = "^[0-9]*$";// 숫자만
 	String val = "123456789"; // 대상문자열
 
@@ -64,13 +62,16 @@ public class Hi99 extends Thread {
 			y = random.nextInt(9) + 1;
 			answer = x * y;// 곱셈 결과 값
 			System.out.print(x + " x " + y + " => ");
-			z = sc.nextLine();// 사용자 입력
-			Boolean regex = Pattern.matches(pattern, z);
-			if (!regex) {
-				System.out.println("정수만 입력해주세요");
-				continue;
-
-			} else if (answer == Integer.valueOf(z)) {
+			while (true) {
+				z = Main.sc.nextLine();// 사용자 입력
+				Boolean regex = Pattern.matches(pattern, z);
+				if (!regex) {
+					System.out.println("정수만 입력해주세요");
+					continue;
+				}
+				break;
+			}
+			if (answer == Integer.valueOf(z)) {
 				score += 10;
 				System.out.println("정답입니다! " + plus + "점 추가 " + "총점 =>" + score);
 
