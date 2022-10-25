@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class NumberGuessing {
 	
-	int serialNum = 1;
+	public final int serialNum = 1;
 	
 	private static int score = 0; // 점수(누적)
 	private static int life = 5; // 시도횟수 한도
