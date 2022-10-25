@@ -45,7 +45,8 @@ public class Command {
 
 		command.put("admin", admin); // 분기2 : 관리자 메뉴
 		admin.add(null);
-		admin.add(new UpdateController()); // 회원관리
+		admin.add(new UpdateController()); // 회원수정
+		admin.add(new DeleteController()); // 회원삭제
 //		admin.add(new RankResearchController()); // 랭크검색
 //		admin.add(new RankDeleteController()); // 랭크삭제
 //		admin.add(new RankInsertController()); // 랭크수정
