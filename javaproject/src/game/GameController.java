@@ -6,7 +6,7 @@ import AgameMain.Main;
 import exploiter.controller.Controller;
 
 public class GameController implements Controller {
-//김주환 작성중
+
 	GameService service = new GameService(new GameDaoOracle());
 
 	@Override
@@ -21,7 +21,7 @@ public class GameController implements Controller {
 			break;
 		case 2:
 			Hi99 gamea = new Hi99();
-			gamea.hi_start();
+			//gamea.hi_start();
 			break;
 		case 3:
 			TicTacToe tacToe = new TicTacToe();
@@ -42,8 +42,4 @@ public class GameController implements Controller {
 		}
 
 	}
-
-	public static void main(String[] args) {
-		GameController controller = new GameController();
-		controller.process();
-	}
+}
