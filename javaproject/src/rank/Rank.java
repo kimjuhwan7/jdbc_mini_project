@@ -52,6 +52,15 @@ public class Rank {
 	public void setCleartime(String cleartime) {
 		this.cleartime = cleartime;
 	}
+	
+	public void setGamename(String gamename) {
+		this.gamename = gamename;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;

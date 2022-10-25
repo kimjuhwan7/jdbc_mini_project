@@ -99,7 +99,7 @@ public class RankDaoOracle implements RankDao{
 			while(rs.next())
 			{
 				list.add(new Rank( rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
-				list.get(list.size()-1).setNickname(rs.getString("gamename"));
+				list.get(list.size()-1).setGamename(rs.getString("gamename"));
 			}
 		}
 		finally 
