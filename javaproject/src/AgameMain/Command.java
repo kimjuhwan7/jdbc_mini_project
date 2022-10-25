@@ -40,7 +40,7 @@ public class Command {
 		command.put("user", user); // 분기2 : 회원 메뉴
 		user.add(null);
 //		// user.add(new GameController()); // 게임시작
-		 user.add(new RankResearchController()); // 랭크확인
+		// user.add(new RankResearchController()); // 랭크확인
 		user.add(new Log_outController()); // 로그아웃
 		user.add(new UpdateController()); // 회원수정 
 		user.add(new DeleteController()); // 회원22탈퇴
@@ -81,6 +81,8 @@ public class Command {
 
 	public static void userCommand() {
 		
+		Main.userMenu();
+		
 		Command command = AgameMain.Command.GetInstance();
 		int select = Integer.parseInt(Main.sc.nextLine());
 		String user = "user";
@@ -89,6 +91,8 @@ public class Command {
 	}
 	
 	public static void adminCommand() {
+		
+		Main.adminMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
 		int select = Integer.parseInt(Main.sc.nextLine());
