@@ -2,10 +2,11 @@ package rank.controller;
 
 import java.util.List;
 
+import AgameMain.Main;
 import rank.Rank;
 import rank.service.RankResearchService;
 
-public class RankResearchController{
+public class RankResearchController implements exploiter.controller.Controller{
 	
 	private static RankResearchController instance = new RankResearchController();
 	
@@ -19,10 +20,14 @@ public class RankResearchController{
 
 	RankResearchService service = new RankResearchService();
 	
-	public void function(int select) 
+	@Override
+	public void process() 
 	{
 		// TODO Auto-generated method stub		
-		
+
+		System.out.println("보고자 하는 랭킹을 선택 해 주세요");
+		System.out.println("1.구구단 맞추기	2.숫자 맞추기	3.구구단4.종합 ");
+		int select = Integer.parseInt(Main.sc.nextLine());
 		if(select == 4)
 		{
 			List<Rank> rank = service.researchAll();
@@ -37,7 +42,7 @@ public class RankResearchController{
 		}
 		else 
 			{
-			List<Rank> rank = service.researchAll();
+			List<Rank> rank = service.research(select);
 		
 			if(rank != null)
 			{
@@ -48,19 +53,19 @@ public class RankResearchController{
 				System.out.println("No Data");
 			}
 		}
+	public void function(int num) 
+	{
+		// TODO Auto-generated method stub		
+
+			List<Rank> rank = service.research(num);
 		
-		
-		public void function(String nickname)
-		{
-			
-				List<Rank> rank = service.research(nickname);
-			
-				if(rank != null)
-				{
-					for(Rank r : rank)
-						r.toString();
-				}
-					else
-						System.out.println("No Data");
+			if(rank != null)
+			{
+				for(Rank r : rank)
+					r.toString();
+			}
+				else
+					System.out.println("No Data");
 		}
-}
+	}
+
