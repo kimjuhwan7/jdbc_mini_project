@@ -7,6 +7,12 @@ import java.util.Scanner;
 //hi.hi_start();
 
 public class Hi99 extends Thread {
+
+	public static void main(String[] args) {
+		Hi99 hi99 = new Hi99();
+		hi99.hi_start();
+	}
+
 	static int x;// 앞자리
 	static int y;// 뒷자리
 	static int z;// 사용자입력값
@@ -15,6 +21,7 @@ public class Hi99 extends Thread {
 	static int plus = 10;// 추가점수
 	static int count_down = 0;// 카운트 다운
 	static int start_count = 30;// 잔여시간
+	static int serial = 2;// 게임 시리얼넘버
 
 	@Override
 	public void run() {// 스레드
