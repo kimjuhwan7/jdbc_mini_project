@@ -5,6 +5,8 @@ public class Rank {
 	private int exploiternum;
 	private int score;
 	private String cleartime;
+	private String gamename;
+	private String nickname;
 	
 	public Rank(int serialnum, int exploiternum, int score, String cleartime)
 	{
@@ -50,6 +52,15 @@ public class Rank {
 	public void setCleartime(String cleartime) {
 		this.cleartime = cleartime;
 	}
+	
+	public void setGamename(String gamename) {
+		this.gamename = gamename;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
 
 	@Override
 	public String toString() {
