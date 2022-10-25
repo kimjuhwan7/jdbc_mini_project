@@ -1,4 +1,5 @@
 package AgameMain;
+
 import java.util.HashMap;
 import java.util.Map;
 import exploiter.controller.Controller;
@@ -22,7 +23,7 @@ public class AdminCommand {
 		command.put(2, (Controller) new RankResearchController()); // 랭크검색
 		command.put(3, (Controller) new RankDeleteController()); // 랭크삭제
 		command.put(4, (Controller) new RankInsertController()); // 랭크수정
-		// command.put(5, new ); // 로그아웃
+		command.put(5, (Controller) new Log_out()); // 로그아웃
 
 	}
 

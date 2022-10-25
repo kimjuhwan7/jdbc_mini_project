@@ -1,4 +1,5 @@
 package AgameMain;
+
 import java.util.HashMap;
 import java.util.Map;
 import exploiter.controller.Controller;
@@ -17,11 +18,11 @@ public class UserCommand {
 	public UserCommand() {
 		command = new HashMap<>();
 
-		command.put(1, new GameController()); // 게임시작
+		//command.put(1, (Controller) new GameController()); // 게임시작
 		command.put(2, (Controller) new RankResearchController()); // 랭크확인
-		// command.put(3, new ); // 로그아웃-> 메인 메뉴로 이동 
+		command.put(3, (Controller) new Log_out()); // 로그아웃-> 메인 메뉴로 이동
 		command.put(4, (Controller) new UpdateController()); // 회원수정
-		command.put(5, (Controller) new DeleteController()); // 회원탈퇴 
+		command.put(5, (Controller) new DeleteController()); // 회원탈퇴
 
 	}
 
