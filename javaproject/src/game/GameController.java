@@ -21,7 +21,7 @@ public class GameController implements Controller {
 			break;
 		case 2:
 			Hi99 gamea = new Hi99();
-			//gamea.hi_start();
+			gamea.game_Start();
 			break;
 		case 3:
 			TicTacToe tacToe = new TicTacToe();

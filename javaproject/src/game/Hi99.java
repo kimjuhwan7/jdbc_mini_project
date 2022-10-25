@@ -41,13 +41,18 @@ public class Hi99 extends Thread {
 		// start_count 끝나면 실행
 		System.out.println("시간이 종료 되었습니다.");
 		System.out.println("총 스코어 " + score + "입니다. 축하합니다");
+		
+		
 		RankInsertController insertctl = new RankInsertController();
+		 
 		insertctl.function(serial_num, score, Main.now);
+		
 		RankResearchController showRanking = new RankResearchController();
+		
 		showRanking.function(this.serial_num);
 	}
 
-	public void gameStart() {
+	public void game_Start() {
 		String pattern = "^[0-9]*$";// 숫자만
 		Hi99 thread = new Hi99();
 

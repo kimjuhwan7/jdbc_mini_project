@@ -40,7 +40,7 @@ public class Command {
 		
 		command.put("user", user); // 분기2 : 회원 메뉴
 		user.add(null);
-//		// user.add(new GameController()); // 게임시작
+        user.add(new GameController()); // 게임시작
 		user.add(new RankResearchController()); // 랭크확인
 		user.add(new Log_outController()); // 로그아웃
 		user.add(new UpdateController()); // 회원수정 
@@ -123,7 +123,7 @@ public class Command {
 			}
 			
 			} catch(Exception e){
-				System.out.println("1~5 사이의 값을 입력해주세요.");
+				System.out.println("1~8 사이의 값을 입력해주세요.");
 			}
 		
 		String user = "admin";
@@ -148,7 +148,7 @@ public class Command {
 			}
 			
 			} catch(Exception e){
-				System.out.println("1~5 사이의 값을 입력해주세요.");
+				System.out.println("1~3 사이의 값을 입력해주세요.");
 			}
 		
 		command.command.get("menu").get(select).process();
