@@ -31,24 +31,5 @@ public class Main {
 		System.out.println("2. 회원가입");
 		System.out.println("3. 종료");
 	}
-	
-	public static void userMenu() {
-		System.out.println("원하시는 메뉴 번호를 입력하세요. .");
-		System.out.println("1. 게임시작");
-		System.out.println("2. 랭크확인");
-		System.out.println("3. 로그아웃");
-		System.out.println("4. 회원수정");
-		System.out.println("5. 회원탈퇴");
-		
-	}
-	
-	public static void adminMenu() {
-		System.out.println("원하시는 메뉴 번호를 입력하세요. .");
-		System.out.println("1. 회원관리");
-		System.out.println("2. 랭크검색");
-		System.out.println("3. 랭크삭제");
-		System.out.println("4. 랭크수정");
-
-	}
 
 }
