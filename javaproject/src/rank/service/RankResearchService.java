@@ -2,6 +2,7 @@ package rank.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import rank.Rank;
 import rank.RankDao;
@@ -12,9 +13,9 @@ public class RankResearchService {
 
 	RankDao dao = new RankDaoOracle();
 	
-	public Rank research(String nickName)
+	public List<Rank> research(String nickName)
 	{
-		Rank rank = null;
+		List<Rank> rank = null;
 		Connection conn = null;
 		
 		try 
@@ -44,9 +45,9 @@ public class RankResearchService {
 		
 		return rank;
 	}
-	public Rank research(int serialNum)
+	public List<Rank> research(int serialNum)
 	{
-		Rank rank = null;
+		List<Rank> rank = null;
 		Connection conn = null;
 		
 		try 

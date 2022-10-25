@@ -26,11 +26,11 @@ public class RankCommand {
 		command = new LinkedList<>();
 		if(!command.add(new RankInsertController()))
 		{
-			System.out.println("¸í·É Ãß°¡ ½ÇÆÐ");
+			System.out.println("ëª…ë ¹ ì¶”ê°€ ì‹¤íŒ¨");
 		}
 		if(!command.add(new RankDeleteController()))
 		{
-			System.out.println("¸í·É Ãß°¡ ½ÇÆÐ");			
+			System.out.println("ëª…ë ¹ ì¶”ê°€ ì‹¤íŒ¨");			
 		}
 	}
 }

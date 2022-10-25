@@ -65,13 +65,13 @@ public class Rank {
 	public String toString() {
 		// TODO Auto-generated method stub
 		if(nickname != null)
-			return "ÀÌ¸§ : "+ this.nickname +  "Å¬¸®¾î Á¡¼ö : " + this.score + "Å¬¸®¾î ½Ã°£ : " + this.cleartime;
+			return "ì´ë¦„: "+ this.nickname +  "í´ë¦¬ì–´ ì ìˆ˜ : " + this.score + "í´ë¦¬ì–´ ì¼ : " + this.cleartime;
 		
 		else if (gamename != null)
-			return "°ÔÀÓ ÀÌ¸§ : "+ this.nickname +  "Å¬¸®¾î Á¡¼ö : " + this.score + "Å¬¸®¾î ½Ã°£ : " + this.cleartime;
+			return "ê²Œì„ ëª… : "+ this.nickname +  "í´ë¦¬ì–´ ì ìˆ˜ : " + this.score + "í´ë¦¬ì–´ ì¼ : " + this.cleartime;
 		
 		else
-			return "Å¬¸®¾î Á¡¼ö : " + this.score + "Å¬¸®¾î ½Ã°£ : " + this.cleartime;
+			return "í´ë¦¬ì–´ ì ìˆ˜ : " + this.score + "í´ë¦¬ì–´ ì¼ : " + this.cleartime;
 	}
 
 	
