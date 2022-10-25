@@ -101,7 +101,13 @@ public class Command {
 		
 	}
 	
-	
+	public static void menuCommand() {
+		Main.menu();
+		
+		Command command = AgameMain.Command.GetInstance();
+		int select = Integer.parseInt(Main.sc.nextLine());
+		command.command.get("menu").get(select).process();
+	}
 	
 	
 	
