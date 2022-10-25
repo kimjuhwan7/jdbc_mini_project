@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import AgameMain.Main;
 import rank.controller.RankInsertController;
+import rank.controller.RankResearchController;
 
 //Hi99 hi = new Hi99();
 //hi.hi_start();
@@ -49,6 +50,8 @@ public class Hi99 extends Thread {
 		System.out.println("총 스코어 " + score + "입니다. 축하합니다");
 		RankInsertController insertctl = new RankInsertController();
 		insertctl.function(serial_num, score, Main.now);
+		RankResearchController showRanking = new RankResearchController();
+		showRanking.function(this.serial_num);
 	}
 
 	public void hi_start() {

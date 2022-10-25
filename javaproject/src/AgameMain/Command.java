@@ -10,6 +10,8 @@ import exploiter.controller.ExitController;
 import exploiter.controller.InsertController;
 import exploiter.controller.LogInController;
 import exploiter.controller.Log_outController;
+import exploiter.controller.ResearchByIdController;
+import exploiter.controller.SelectController;
 import exploiter.controller.UpdateController;
 import rank.controller.RankDeleteController;
 import rank.controller.RankInsertController;
@@ -38,15 +40,17 @@ public class Command {
 		command.put("user", user); // 분기2 : 회원 메뉴
 		user.add(null);
 //		// user.add(new GameController()); // 게임시작
-//		// user.add(new RankResearchController()); // 랭크확인
+		 user.add(new RankResearchController()); // 랭크확인
 		user.add(new Log_outController()); // 로그아웃
 		user.add(new UpdateController()); // 회원수정 
-		user.add(new DeleteController()); // 회원탈퇴
+		user.add(new DeleteController()); // 회원22탈퇴
 
 		command.put("admin", admin); // 분기2 : 관리자 메뉴
 		admin.add(null);
 		admin.add(new UpdateController()); // 회원수정
-		admin.add(new DeleteController()); // 회원삭제
+		admin.add(new DeleteController()); //회원삭제
+		admin.add(new SelectController()); // 회원출력
+		admin.add(new ResearchByIdController()); // 회원검색
 //		admin.add(new RankResearchController()); // 랭크검색
 //		admin.add(new RankDeleteController()); // 랭크삭제
 //		admin.add(new RankInsertController()); // 랭크수정
@@ -75,6 +79,23 @@ public class Command {
 		return menu;
 	}
 
+	public static void userCommand() {
+		
+		Command command = AgameMain.Command.GetInstance();
+		int select = Integer.parseInt(Main.sc.nextLine());
+		String user = "user";
+		command.command.get(user).get(select).process();
+		
+	}
+	
+	public static void adminCommand() {
+		
+		Command command = AgameMain.Command.GetInstance();
+		int select = Integer.parseInt(Main.sc.nextLine());
+		String user = "admin";
+		command.command.get(user).get(select).process();
+		
+	}
 	
 	
 	
