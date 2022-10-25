@@ -2,7 +2,7 @@ package game;
 
 import java.util.*;
 
-public class TigTacToe {
+public class Test {
 	
 	static String[] board;
 	static String comPlayer;
@@ -171,4 +171,3 @@ public class TigTacToe {
 		}
 	}
 }
-
