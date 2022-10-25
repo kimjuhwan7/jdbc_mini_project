@@ -45,15 +45,71 @@ public class RankDaoOracle implements RankDao{
 	}
 
 	@Override
-	public Rank researchByRank(Connection conn, String nickname) throws SQLException{
+	public List<Rank> researchByRank(Connection conn, String nickName) throws SQLException{
 		// TODO Auto-generated method stub
-		return null;
+		List<Rank> list = new ArrayList<>();
+		String sql = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try
+		{
+			sql = "select * from Rank where ?";
+		
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, nickName);
+			
+			rs = pstmt.executeQuery(sql);
+		
+			while(rs.next())
+			{
+				list.add(new Rank( rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
+			}
+		}
+		finally 
+		{
+			if(rs != null)
+				rs.close();
+			
+			if(pstmt != null)
+				pstmt.close();
+		}
+		
+		return list;
 	}
 
 	@Override
-	public Rank researchByRank(Connection conn, int serialnum) throws SQLException{
+	public List<Rank> researchByRank(Connection conn, int serialnum) throws SQLException{
 		// TODO Auto-generated method stub
-		return null;
+		List<Rank> list = new ArrayList<>();
+		String sql = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try
+		{
+			sql = "select * from Rank where ?";
+		
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, serialnum);
+			
+			rs = pstmt.executeQuery(sql);
+		
+			while(rs.next())
+			{
+				list.add(new Rank( rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
+			}
+		}
+		finally 
+		{
+			if(rs != null)
+			rs.close();
+			
+			if(pstmt != null)
+				pstmt.close();
+		}
+		
+		return list;
 	}
 
 	@Override

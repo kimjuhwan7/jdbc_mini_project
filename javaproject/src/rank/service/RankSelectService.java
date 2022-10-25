@@ -23,8 +23,8 @@ public class RankSelectService {
 	{
 		List<Rank> rank = null;
 		Connection conn = null;
+		
 		try {
-			
 			conn = GenericUtil.getConnection();
 			
 			rank = dao.select(conn);
