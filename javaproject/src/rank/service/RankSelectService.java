@@ -2,6 +2,7 @@ package rank.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import generic.GenericUtil;
@@ -9,20 +10,24 @@ import rank.Rank;
 import rank.RankDao;
 import rank.RankDaoOracle;
 
-public class RankInsertService {
+public class RankSelectService {
+
+	RankDao dao = null;
 	
-	RankDao dao = new RankDaoOracle();
-		
-	public int Insert(Rank rnk)
+	public RankSelectService(RankDao dao)
 	{
-		int result = 0;
+		this.dao = dao;
+	}
+
+	public List<Rank> select()
+	{
+		List<Rank> rank = null;
 		Connection conn = null;
+		
 		try {
-			
 			conn = GenericUtil.getConnection();
 			
-			if(conn == null)
-				result = dao.insert(conn, rnk);
+			rank = dao.select(conn);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -43,6 +48,6 @@ public class RankInsertService {
 			}
 		}
 		
-		return result;
+		return rank;
 	}
 }

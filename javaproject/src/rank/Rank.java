@@ -2,14 +2,14 @@ package rank;
 
 public class Rank {
 	private int serialnum;
-	private int usernum;
+	private int exploiternum;
 	private int score;
 	private String cleartime;
 	
-	public Rank(int serialnum, int usernum, int score, String cleartime)
+	public Rank(int serialnum, int exploiternum, int score, String cleartime)
 	{
 		this.serialnum = serialnum;
-		this.usernum = usernum;
+		this.exploiternum = exploiternum;
 		this.score = score;
 		this.cleartime = cleartime;
 	}
@@ -19,20 +19,20 @@ public class Rank {
 		
 	}
 	
-	public int getSerialnum() {
+	public int getSerialNum() {
 		return serialnum;
 	}
 	
-	public void setSerialnum(int serialnum) {
+	public void setSerialNum(int serialnum) {
 		this.serialnum = serialnum;
 	}
 	
-	public int getUsernum() {
-		return usernum;
+	public int getExploiterNum() {
+		return exploiternum;
 	}
 	
-	public void setUsernum(int usernum) {
-		this.usernum = usernum;
+	public void setExploiterNum(int exploiternum) {
+		this.exploiternum = exploiternum;
 	}
 	
 	public int getScore() {
