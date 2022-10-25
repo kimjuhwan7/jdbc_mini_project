@@ -26,7 +26,7 @@ public class RankResearchController implements exploiter.controller.Controller{
 		// TODO Auto-generated method stub		
 
 		System.out.println("보고자 하는 랭킹을 선택 해 주세요");
-		System.out.println("1.구구단 맞추기	2.숫자 맞추기	3.구구단4.종합 ");
+		System.out.println("1.구구단 맞추기\t2.숫자 맞추기\t3.구구단\t4.종합 ");
 		int select = Integer.parseInt(Main.sc.nextLine());
 		if(select == 4)
 		{
@@ -35,22 +35,22 @@ public class RankResearchController implements exploiter.controller.Controller{
 			if(rank != null)
 			{
 				for(Rank r : rank)
-					r.toString();
+					System.out.println(r.toString());
 			}
 				else
 					System.out.println("No Data");
 		}
 		else 
 			{
-			List<Rank> rank = service.research(select);
-		
-			if(rank != null)
-			{
-				for(Rank r : rank)
-					r.toString();
-			}
-			else
-				System.out.println("No Data");
+				List<Rank> rank = service.research(select);
+				System.out.println(rank.size());
+				if(rank != null)
+				{
+					for(Rank r : rank)
+						System.out.println(r.toString());
+				}
+				else
+					System.out.println("No Data");
 			}
 		}
 	public void function(int num) 
@@ -62,7 +62,7 @@ public class RankResearchController implements exploiter.controller.Controller{
 			if(rank != null)
 			{
 				for(Rank r : rank)
-					r.toString();
+					System.out.println(r.toString());
 			}
 				else
 					System.out.println("No Data");

@@ -6,7 +6,7 @@ import rank.Rank;
 import rank.RankDaoOracle;
 import rank.service.RankSelectService;
 
-public class RankSelectController{
+public class RankSelectController implements exploiter.controller.Controller{
 	
 	private static RankSelectController instance = new RankSelectController();
 	
@@ -20,15 +20,15 @@ public class RankSelectController{
 	
 	RankSelectService service = new RankSelectService(new RankDaoOracle());
 
-	public void function() {
+	public void process() {
 		// TODO Auto-generated method stub
 		List<Rank> rank = service.select();
 		
-		if(rank != null)
+		if(rank != null && rank.size() > 0)
 		{
 			for(Rank r : rank)
 			{
-				r.toString();
+				System.out.println(r.toString());
 			}
 		}
 		else
