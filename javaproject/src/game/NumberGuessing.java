@@ -107,7 +107,7 @@ public class NumberGuessing {
 	}
 	
 	//
-	public static void main(String[] args) {
+	public static void numberGuessingStart() {
 
 		state = STATE.START;
 		while(state!=STATE.EXIT) {
