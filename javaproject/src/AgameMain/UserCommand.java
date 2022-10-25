@@ -18,10 +18,10 @@ public class UserCommand {
 		command = new HashMap<>();
 
 		command.put(1, new GameController()); // 게임시작
-		command.put(2, new RankResearchController()); // 랭크확인
-		// command.put(3, new ); // 로그아웃
-		command.put(4, new UpdateController()); // 회원수정
-		command.put(5, new DeleteController()); // 회원탈퇴 
+		command.put(2, (Controller) new RankResearchController()); // 랭크확인
+		// command.put(3, new ); // 로그아웃-> 메인 메뉴로 이동 
+		command.put(4, (Controller) new UpdateController()); // 회원수정
+		command.put(5, (Controller) new DeleteController()); // 회원탈퇴 
 
 	}
 
