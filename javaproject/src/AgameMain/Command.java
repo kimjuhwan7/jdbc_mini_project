@@ -13,6 +13,7 @@ import exploiter.controller.Log_outController;
 import exploiter.controller.ResearchByIdController;
 import exploiter.controller.SelectController;
 import exploiter.controller.UpdateController;
+import game.GameController;
 import rank.controller.RankDeleteController;
 import rank.controller.RankInsertController;
 import rank.controller.RankResearchController;
