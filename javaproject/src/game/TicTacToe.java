@@ -7,6 +7,9 @@ import java.util.Scanner;
 public class TicTacToe {
 
 	private static int score = 0;
+	private static Scanner scanner = new Scanner(System.in);
+	static int serial_num = 3;
+
 	// 게임이 끝나는 조건 우승 | 무승부
 	private static boolean isGameFinished(char[][] board) {
 
@@ -170,17 +173,15 @@ public class TicTacToe {
 	
 	private static void reGame() {
 		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
-		
-		Scanner scanner = new Scanner(System.in);
 		String sc = scanner.nextLine();
-		
 		if(sc.equals("네")) {
-			
+			gameStart();
+		}else if(sc.equals("아니오")) {
+			exitGame();
 		}
 	}
 
-	private static String gameStart() {
-		Scanner scanner = new Scanner(System.in);
+	private static void gameStart() {
 		System.out.println("3 x 3 TicTacToe Game Start!!");
 		char[][] board = { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
 		printBoard(board);
@@ -196,12 +197,18 @@ public class TicTacToe {
 			}
 			printBoard(board);
 		}
+			reGame();
+	}
+	
+	private static void exitGame() {
+		System.out.println("\nGAME OVER");
+		System.out.println("메뉴로 돌아갑니다.");
+		System.out.println();
 		scanner.close();
-		return gameStart();
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(gameStart());	
-
+		gameStart();
+	
 	}
 }
