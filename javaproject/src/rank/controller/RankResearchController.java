@@ -21,10 +21,7 @@ public class RankResearchController{
 	
 	public void function(int select) 
 	{
-		// TODO Auto-generated method stub
-		System.out.println("보고자 하는 랭킹을 선택 해 주세요");
-		System.out.println("1.구구단 맞추기 	2.숫자 맞추기 	3.구구단	4.종합 ");
-		
+		// TODO Auto-generated method stub		
 		
 		if(select == 4)
 		{

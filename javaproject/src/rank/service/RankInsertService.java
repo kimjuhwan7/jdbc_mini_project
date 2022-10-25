@@ -21,8 +21,7 @@ public class RankInsertService {
 			
 			conn = GenericUtil.getConnection();
 			
-			if(conn == null)
-				result = dao.insert(conn, rnk);
+			result = dao.insert(conn, rnk);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

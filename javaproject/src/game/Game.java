@@ -1,6 +1,6 @@
 package game;
 
-public abstract class Game {
+public class Game {
 
 	private int serialnum;
 	private String gamename;

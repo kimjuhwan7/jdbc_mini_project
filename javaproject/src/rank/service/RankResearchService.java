@@ -43,7 +43,6 @@ public class RankResearchService {
 			}
 		}
 		
-		
 		return rank;
 	}
 	public List<Rank> research(int serialNum)
