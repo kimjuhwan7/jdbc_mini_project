@@ -2,22 +2,33 @@ package rank.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import generic.GenericUtil;
+import rank.Rank;
 import rank.RankDao;
 import rank.RankDaoOracle;
 
-public class RankDeleteService {
-	RankDao dao = new RankDaoOracle();
+public class RankSelectService {
+
+	RankDao dao = null;
 	
-	public int delete(int index)
+	public RankSelectService(RankDao dao)
 	{
-		int result = 0;
+		this.dao = dao;
+	}
+
+	public List<Rank> select()
+	{
+		List<Rank> rank = null;
 		Connection conn = null;
+		
 		try {
 			conn = GenericUtil.getConnection();
 			
-			result = dao.delete(conn, index);
+			rank = dao.select(conn);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -28,13 +39,15 @@ public class RankDeleteService {
 			{
 				try {
 					conn.close();
-				} catch (SQLException e) {
+				} 
+				catch (SQLException e) 
+				{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		}
 		
-		return result;
+		return rank;
 	}
 }

@@ -4,54 +4,44 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import generic.GenericUtil;
 import rank.Rank;
 import rank.RankDao;
+import rank.RankDaoOracle;
 
 public class RankInsertService {
 	
-	RankDao dao = new RankDao() {
+	RankDao dao = new RankDaoOracle();
 		
-		@Override
-		public int update(Connection conn, Rank rnk) 
+	public int Insert(Rank rnk)
+	{
+		int result = 0;
+		Connection conn = null;
+		try {
+			
+			conn = GenericUtil.getConnection();
+			
+			result = dao.insert(conn, rnk);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally
 		{
-			// TODO Auto-generated method stub
-			return 0;
+			if(conn != null)
+			{
+				try {
+					conn.close();
+				} 
+				catch (SQLException e) 
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
 		}
 		
-		@Override
-		public List<Rank> select(Connection conn) throws SQLException 
-		{
-			// TODO Auto-generated method stub
-			return null;
-		}
-		
-		@Override
-		public Rank researchByRank(Connection conn, int serialnum) 
-		{
-			// TODO Auto-generated method stub
-			return null;
-		}
-		
-		@Override
-		public Rank researchByRank(Connection conn, String nickname) 
-		{
-			// TODO Auto-generated method stub
-			return null;
-		}
-		
-		@Override
-		public int insert(Connection conn, Rank rnk) 
-		{
-			// TODO Auto-generated method stub
-			return 0;
-		}
-		
-		@Override
-		public int delete(Connection conn, Rank rnk) 
-		{
-			// TODO Auto-generated method stub
-			return 0;
-		}
-	};
-	
+		return result;
+	}
 }

@@ -13,6 +13,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.classpatch
 
 # External tool builders
 .externalToolBuilders/
@@ -127,3 +128,4 @@ Temporary Items
 *.icloud
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java,macos
+javaproject/.classpath
