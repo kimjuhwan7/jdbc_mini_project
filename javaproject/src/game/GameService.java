@@ -19,7 +19,7 @@ public class GameService {
 			conn = generic.GenericUtil.getConnection();
 
 			String gameName;
-			list = dao.researchByGame(conn, gameName);
+			
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
