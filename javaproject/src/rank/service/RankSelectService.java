@@ -12,19 +12,22 @@ import rank.RankDaoOracle;
 
 public class RankSelectService {
 
-	RankDao dao = new RankDaoOracle();
+	RankDao dao = null;
 	
-	List<Rank> rnk = ArrayList<Rank>();
-		
-	public int Select(Rank rnk)
+	public RankSelectService(RankDao dao)
 	{
-		int result = 0;
+		this.dao = dao;
+	}
+
+	public List<Rank> select()
+	{
+		List<Rank> rank = null;
 		Connection conn = null;
 		try {
 			
 			conn = GenericUtil.getConnection();
 			
-			rnk = dao.select(conn);
+			rank = dao.select(conn);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -45,6 +48,6 @@ public class RankSelectService {
 			}
 		}
 		
-		return result;
+		return rank;
 	}
 }
