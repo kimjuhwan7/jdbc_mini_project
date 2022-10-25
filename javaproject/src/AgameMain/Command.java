@@ -52,7 +52,7 @@ public class Command {
 		admin.add(new SelectController()); // 회원출력
 		admin.add(new ResearchByIdController()); // 회원검색
 //		admin.add(new RankResearchController()); // 랭크검색
-//		admin.add(new RankDeleteController()); // 랭크삭제
+		admin.add(new RankDeleteController()); // 랭크삭제
 //		admin.add(new RankInsertController()); // 랭크수정
 		admin.add(new Log_outController());// 로그아웃 -> 메인메뉴로 이동
 		
