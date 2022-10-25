@@ -2,9 +2,12 @@ package game;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 //Hi99 hi = new Hi99();
 //hi.hi_start();
+//serial_Num = 2;
+//  score;// 총점
 
 public class Hi99 extends Thread {
 
@@ -15,13 +18,13 @@ public class Hi99 extends Thread {
 
 	static int x;// 앞자리
 	static int y;// 뒷자리
-	static int z;// 사용자입력값
+	static String z;// 사용자입력값
 	static int answer;// 앞*뒤=결과값
 	static int score;// 총점
 	static int plus = 10;// 추가점수
 	static int count_down = 0;// 카운트 다운
 	static int start_count = 30;// 잔여시간
-	static int serial_num = 2;// 게임 시리얼넘버
+	static int serial_Num = 2;// 게임 시리얼넘버
 
 	@Override
 	public void run() {// 스레드
@@ -42,6 +45,7 @@ public class Hi99 extends Thread {
 		Random random = new Random();
 		Scanner sc = new Scanner(System.in);
 		Hi99 thread = new Hi99();
+		String pattern = "^[0-9]*$";
 
 		System.out.println("구구단 게임을 시작합니다.");
 		System.out.println(start_count + "초 동안 문제를 빠르게 풀어주세요");
@@ -54,16 +58,20 @@ public class Hi99 extends Thread {
 			answer = x * y;// 곱셈 결과 값
 
 			System.out.print(x + " x " + y + " => ");
-
-			z = sc.nextInt();// 사용자 입력
-
-			if (z == answer) {
+			while (true) {
+				z = sc.nextLine();// 사용자 입력
+				
+				Pattern.matches(pattern, System.out.println(re))
+				if (!(z == p)) {
+					break;
+				}
+			}
+			System.out.println();
+			if (answer == Integer.parseInt(z)) {
 				score += 10;
 				System.out.println("정답입니다! " + plus + "점 추가 " + " 총점 =>" + score);
-
-			} else if (z != answer) {
-				System.out.println("오답입니다! 정답은 : " + answer + " 입니다");
-
+			} else {
+				System.out.println("오답입니다! 정답 -> " + answer + " 다음문제");
 			}
 		}
 	}
