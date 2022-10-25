@@ -5,8 +5,8 @@ public class Rank {
 	private int exploiternum;
 	private int score;
 	private String cleartime;
-	private String gamename;
-	private String nickname;
+	private String nickname = null;
+	private String gamename = null;
 	
 	public Rank(int serialnum, int exploiternum, int score, String cleartime)
 	{
@@ -62,10 +62,25 @@ public class Rank {
 	}
 
 
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public void setGamename(String gamename) {
+		this.gamename = gamename;
+	}
+
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return " : " + this.score + " : " + this.cleartime;
+		if(nickname != null)
+			return "이름: "+ this.nickname +  "클리어 점수 : " + this.score + "클리어 일 : " + this.cleartime;
+		
+		else if (gamename != null)
+			return "게임 명 : "+ this.nickname +  "클리어 점수 : " + this.score + "클리어 일 : " + this.cleartime;
+		
+		else
+			return "클리어 점수 : " + this.score + "클리어 일 : " + this.cleartime;
 	}
 
 	
