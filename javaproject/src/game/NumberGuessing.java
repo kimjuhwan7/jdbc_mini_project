@@ -116,7 +116,6 @@ public class NumberGuessing {
 		showRanking.function(serialnum);
 	}
 	
-	//
 	public static void gameStart() 
 	{
 
