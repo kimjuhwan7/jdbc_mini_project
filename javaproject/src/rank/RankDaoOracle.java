@@ -54,7 +54,7 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "select * from Rank where ?";
+			sql = "select e.nickname, r.score, r.cleartime from Rank r,exploiter e where r.usernum = e.usernum and e.nickname like ?";
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, nickName);
@@ -88,7 +88,7 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "select * from Rank where ?";
+			sql = "select (select ganename from game where rank.serialnum = game.serialnum), * from Rank,  where ?";
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, serialnum);
@@ -128,7 +128,7 @@ public class RankDaoOracle implements RankDao{
 			pstmt.setDouble(1, rnk.getSerialNum());
 			pstmt.setInt(2, rnk.getExploiterNum());
 			pstmt.setInt(3, rnk.getScore());
-			pstmt.setString(4, rnk.getCleartime());
+			pstmt.setDate(4, rnk.getCleartime());
 		
 			result = pstmt.executeUpdate();
 		}
