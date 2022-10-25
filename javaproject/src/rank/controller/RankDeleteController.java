@@ -1,5 +1,6 @@
 package rank.controller;
 
+import AgameMain.Main;
 import rank.service.RankDeleteService;
 
 public class RankDeleteController{

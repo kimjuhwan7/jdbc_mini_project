@@ -61,15 +61,6 @@ public class Rank {
 		this.nickname = nickname;
 	}
 
-
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
-	}
-
-	public void setGamename(String gamename) {
-		this.gamename = gamename;
-	}
-
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
