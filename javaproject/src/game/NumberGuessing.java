@@ -4,10 +4,15 @@ import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
+import AgameMain.Main;
+import rank.controller.RankInsertController;
+import rank.controller.RankResearchController;
+
 public class NumberGuessing {
 	
 	private static int score = 0; // 점수(누적)
 	private static int life = 5; // 시도횟수 한도
+	private static int serialnum = 1;
 	
 	private enum STATE{START, RESET, PLAY, GAMEOVER, EXIT};
 	private static STATE state= STATE.START;
@@ -104,10 +109,16 @@ public class NumberGuessing {
 	private static void exitGame() {
 		System.out.println("\nGAME OVER");
 		System.out.println("수고하셨습니다. 최종 점수는 " + score + "점 입니다.");
+
+		RankInsertController insertctl = new RankInsertController();
+		insertctl.function(serialnum, score, Main.now);
+		RankResearchController showRanking = new RankResearchController();
+		showRanking.function(serialnum);
 	}
 	
 	//
-	public static void main(String[] args) {
+	public static void gameStart() 
+	{
 
 		state = STATE.START;
 		while(state!=STATE.EXIT) {

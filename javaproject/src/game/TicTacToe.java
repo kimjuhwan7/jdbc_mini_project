@@ -3,6 +3,10 @@ package game;
 import java.util.Random;
 import java.util.Scanner;
 
+import AgameMain.Main;
+import rank.controller.RankInsertController;
+import rank.controller.RankResearchController;
+
 // 플레이어 = 'X'  | 컴퓨터 = 'O' 
 public class TicTacToe {
 
@@ -201,14 +205,13 @@ public class TicTacToe {
 	}
 	
 	private static void exitGame() {
+		RankInsertController insertctl = new RankInsertController();
+		insertctl.function(serial_num, score, Main.now);
+		RankResearchController showRanking = new RankResearchController();
+		showRanking.function(serial_num);
 		System.out.println("\nGAME OVER");
 		System.out.println("메뉴로 돌아갑니다.");
 		System.out.println();
 		scanner.close();
-	}
-	
-	public static void main(String[] args) {
-		gameStart();
-	
 	}
 }

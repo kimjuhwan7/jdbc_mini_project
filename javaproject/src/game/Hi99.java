@@ -17,11 +17,6 @@ public class Hi99 extends Thread {
 	String pattern = "^[0-9]*$";// 숫자만
 	String val = "123456789"; // 대상문자열
 
-	public static void main(String[] args) {
-		Hi99 hi99 = new Hi99();
-		hi99.hi_start();
-	}
-
 	int x;// 앞자리
 	int y;// 뒷자리
 	String z;// 사용자입력값
@@ -54,7 +49,7 @@ public class Hi99 extends Thread {
 		showRanking.function(this.serial_num);
 	}
 
-	public void hi_start() {
+	public void gameStart() {
 		String pattern = "^[0-9]*$";// 숫자만
 		Hi99 thread = new Hi99();
 
