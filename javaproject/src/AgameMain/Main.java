@@ -1,5 +1,6 @@
 package AgameMain;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import exploiter.Exploiter;
@@ -10,6 +11,7 @@ import exploiter.Exploiter;
 public class Main {
 	public static Scanner sc = new Scanner(System.in);// 다회용 스케너
 	public static Exploiter user; // 로그인 정보 저장용
+	public static LocalDate now = LocalDate.now();
 
 	
 	

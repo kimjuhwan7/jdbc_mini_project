@@ -1,5 +1,7 @@
 package rank.controller;
 
+import java.time.LocalDate;
+
 import AgameMain.Main;
 import rank.Rank;
 import rank.service.RankInsertService;
@@ -18,7 +20,7 @@ public class RankInsertController{
 	
 	RankInsertService service = new RankInsertService();
 
-	public void function(int serialnum,int score, String cleardate) {
+	public void function(int serialnum,int score, LocalDate cleardate) {
 		// TODO Auto-generated method stub
 		
 		int result = service.Insert(new Rank(serialnum, Main.user.getUsernum(),score,cleardate));
