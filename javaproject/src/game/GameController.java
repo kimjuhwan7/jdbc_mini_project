@@ -7,7 +7,7 @@ public class GameController implements Controller {
 
 	private static GameController instance = null;
 
-	public GameController GetInstance() {
+	public static GameController GetInstance() {
 		if (instance == null)
 			instance = new GameController();
 
