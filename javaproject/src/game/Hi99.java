@@ -20,9 +20,9 @@ public class Hi99 extends Thread {
 	static int score;// 총점
 	int plus = 10;// 추가점수
 	int count_down = 0;// 카운트 다운
-	int start_count = 30;// 잔여시간
+	int start_count = 2;// 잔여시간
 	static int serial_num = 2;// 게임 시리얼넘버
-	boolean state;// 스레드 상태
+	static  boolean state;// 스레드 상태
 
 	@Override
 	public void run() {// 스레드
@@ -32,10 +32,6 @@ public class Hi99 extends Thread {
 				Thread.sleep(1000);// 1초
 			}
 		} catch (InterruptedException e) {
-		} finally {
-			System.out.println("시간이 종료 되었습니다.");
-			System.out.println("총 스코어 " + score + "입니다. 축하합니다");
-
 		}
 		// start_count 끝나면 실행
 		System.out.println("시간이 종료 되었습니다.");
@@ -61,6 +57,7 @@ public class Hi99 extends Thread {
 			answer = x * y;// 곱셈 결과 값
 			System.out.print(x + " x " + y + " => ");
 			while (state) {
+				Main.sc.nextLine();
 				z = Main.sc.nextLine();// 사용자 입력
 				Boolean regex = Pattern.matches(pattern, z);
 				if (!regex) {
@@ -75,7 +72,6 @@ public class Hi99 extends Thread {
 
 			} else {
 				System.out.println("오답입니다! 정답-> " + answer + " 총점 =>" + score + " 다음문제");
-
 			}
 		}
 	}
@@ -88,6 +84,12 @@ public class Hi99 extends Thread {
 		} else if (sc.equals("아니오")) {
 			exitGame();
 		}
+		else 
+		{
+			System.out.println("네/아니오 로만 작성해 주십시오");
+			reGame();
+		}
+		state = false;
 	}
 
 	private static void exitGame() {
@@ -100,11 +102,6 @@ public class Hi99 extends Thread {
 		System.out.println();
 
 	}
-
-//	public static void main(String[] args) {
-//		Hi99 hi99 = new Hi99();
-//		hi99.game_Start();
-//	}
 
 	public int getSerialnum() {
 		return Hi99.serial_num;
