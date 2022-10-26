@@ -17,7 +17,7 @@ public class Hi99 {
 	Random random = new Random(); // 랜덤숫자 생성
 
 	public void game_Start() {
-		System.out.println("구구단 게임을 시작합니다.");
+		System.out.println("구구단 게임을 시작합니다. (횟수제한 10회)");
 		makeMul();
 	}
 
@@ -41,7 +41,7 @@ public class Hi99 {
 		if (score == 100) {
 			System.out.println("만점입니다! 대단합니다!");
 			reGame();
-		} else {
+		} else if (score < 100) {
 			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다." + "\n아쉽게만점을 받지 못했습니다.\n");
 			reGame();
 		}
@@ -49,15 +49,20 @@ public class Hi99 {
 
 	private void reGame() {
 		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
+		while (true) {
+			String sys = Main.sc.nextLine();
 
-		String sys = Main.sc.nextLine();
-		if (sys.equals("네") == true) {
-			game_Start();
-		} else if (sys.equals("아니오") == true) {
-			exitGame();
-		} else {
-			System.out.println("네/아니오 로만 작성해 주십시오");
-			reGame();
+			if (sys.equals("네") == true) {
+				game_Start();
+				break;
+			} else if (sys.equals("아니오") == true) {
+				exitGame();
+				break;
+			} else {
+				System.out.println("네/아니오 로만 작성해 주십시오");
+				continue;
+
+			}
 		}
 	}
 
