@@ -48,10 +48,14 @@ public class Main {
 	
 	public static void adminMenu() {
 		System.out.println("원하시는 메뉴 번호를 입력하세요. .");
-		System.out.println("1. 회원관리");
-		System.out.println("2. 랭크검색");
-		System.out.println("3. 랭크삭제");
-		System.out.println("4. 랭크수정");
+		System.out.println("1. 회원수정");
+		System.out.println("2. 회원삭제");
+		System.out.println("3. 회원출력");
+		System.out.println("4. 회원검색");
+		System.out.println("5. 랭크검색");
+		System.out.println("6. 랭크삭제");
+		System.out.println("7. 랭크수정");
+		System.out.println("8. 로그아웃");
 
 	}
 
