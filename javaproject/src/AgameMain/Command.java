@@ -40,7 +40,7 @@ public class Command {
 		
 		command.put("user", user); // 분기2 : 회원 메뉴
 		user.add(null);
-        user.add(new GameController()); // 게임시작
+//        user.add(new GameController()); // 게임시작
 		user.add(new RankResearchController()); // 랭크확인
 		user.add(new Log_outController()); // 로그아웃
 		user.add(new UpdateController()); // 회원수정 
