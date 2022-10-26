@@ -217,6 +217,6 @@ public class TicTacToe {
 		System.out.println("\nGAME OVER");
 		System.out.println("메뉴로 돌아갑니다.");
 		System.out.println();
-		scanner.close();
+//		scanner.close();
 	}
 }

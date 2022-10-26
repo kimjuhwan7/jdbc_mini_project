@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Taskbar.Feature;
 import java.util.Random;
 import java.util.regex.Pattern;
 
@@ -21,6 +22,7 @@ public class Hi99 extends Thread {
 	int count_down = 0;// 카운트 다운
 	int start_count = 30;// 잔여시간
 	static int serial_num = 2;// 게임 시리얼넘버
+	boolean state;// 스레드 상태
 
 	@Override
 	public void run() {// 스레드
@@ -38,6 +40,7 @@ public class Hi99 extends Thread {
 		// start_count 끝나면 실행
 		System.out.println("시간이 종료 되었습니다.");
 		System.out.println("총 스코어 " + score + "입니다. 축하합니다");
+		state = false;
 		reGame();
 
 	}
@@ -45,19 +48,19 @@ public class Hi99 extends Thread {
 	public void game_Start() {
 		String pattern = "^[0-9]*$";// 숫자만
 		Hi99 thread = new Hi99();
-
+		state = true;
 		System.out.println("구구단 게임을 시작합니다.");
 		System.out.println(start_count + "초 동안 문제를 빠르게 풀어주세요");
 		System.out.println("시작!");
 
 		thread.start();// 스레드 실행 (run)
 
-		while (true) {
+		while (state) {
 			x = random.nextInt(9) + 1;
 			y = random.nextInt(9) + 1;
 			answer = x * y;// 곱셈 결과 값
 			System.out.print(x + " x " + y + " => ");
-			while (true) {
+			while (state) {
 				z = Main.sc.nextLine();// 사용자 입력
 				Boolean regex = Pattern.matches(pattern, z);
 				if (!regex) {
