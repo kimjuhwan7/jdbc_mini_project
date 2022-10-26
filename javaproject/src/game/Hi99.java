@@ -7,9 +7,6 @@ import AgameMain.Main;
 import rank.controller.RankInsertController;
 import rank.controller.RankResearchController;
 
-//Hi99 hi = new Hi99();
-//hi.hi_start();
-
 public class Hi99 extends Thread {
 	Random random = new Random();
 	String pattern = "^[0-9]*$";// 숫자만
