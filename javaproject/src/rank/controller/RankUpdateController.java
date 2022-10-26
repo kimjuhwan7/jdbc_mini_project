@@ -24,14 +24,12 @@ public class RankUpdateController  implements exploiter.controller.Controller{
 		
 		System.out.println("변경할 데이터의 번호를 입력하세요");
 		int index = Main.sc.nextInt();
-		System.out.println("변경할 데이터의 번호를 입력하세요");
-		int index = Main.sc.nextInt();
-		System.out.println("변경할 데이터의 번호를 입력하세요");
-		int index = Main.sc.nextInt();
-		System.out.println("변경할 데이터의 번호를 입력하세요");
-		int index = Main.sc.nextInt();
+		System.out.println("변경할 데이터의 점수를 입력하세요");
+		int score = Main.sc.nextInt();
+		System.out.println("변경할 데이터의 클리어 일을 입력하세요");
+		String cleardate = Main.sc.next();
 		
 		
-		service.update(new Rank(serialnum, usernum, score, cleardate.toString()));
+		service.update(index, score, cleardate.toString());
 	}
 }

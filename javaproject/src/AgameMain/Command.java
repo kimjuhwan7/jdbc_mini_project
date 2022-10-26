@@ -54,8 +54,13 @@ public class Command {
 		admin.add(new ResearchByIdController()); 	// 4. 회원검색
 		admin.add(new RankResearchController()); 	// 5. 랭크검색
 		admin.add(new RankDeleteController()); 		// 6. 랭크삭제
-//		admin.add(new RankUpdateController()); 		// 7. 랭크수정
+<<<<<<< HEAD
+//		admin.add(new RankUpdateController()); 		// 7. 랭크수정  <-- 수정중
+		admin.add(new Log_outController());			// (7) 8. 로그아웃 -> 메인메뉴로 이동 (현재 랭크수정이 만들어지는 상태여서 임의 7번부여 )
+=======
+		admin.add(new RankUpdateController()); 		// 7. 랭크수정
 		admin.add(new Log_outController());			// 8. 로그아웃 -> 메인메뉴로 이동
+>>>>>>> db4498f6910fae493969f4f69241f7e27cb90df2
 		
 	}
 	

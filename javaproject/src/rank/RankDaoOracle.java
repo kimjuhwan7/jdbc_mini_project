@@ -29,7 +29,7 @@ public class RankDaoOracle implements RankDao{
 		
 			while(rs.next())
 			{
-				list.add(new Rank(rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
+				list.add(new Rank(rs.getInt("exploiternum"), rs.getInt("serialnum"), rs.getInt("score"), rs.getString("cleartime")));
 			}
 		}
 		finally 
@@ -54,7 +54,7 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "select e.nickname, r.* from Rank r,exploiter e where r.usernum = e.usernum and e.nickname like ? order by score";
+			sql = "select e.nickname, r.* from Rank r,exploiter e where r.usernum = e.usernum and e.nickname like ? order by score DESC";
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, nickName);
@@ -89,7 +89,7 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "select (select gamename from game where rank.serialnum = game.serialnum) as gamename, Rank.* from Rank  where serialnum = ? order by score";
+			sql = "select (select gamename from game where rank.serialnum = game.serialnum) as gamename, Rank.* from Rank  where serialnum = ? order by score DESC";
 		
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, serialnum);
@@ -147,7 +147,7 @@ public class RankDaoOracle implements RankDao{
 	}
 
 	@Override
-	public int update(Connection conn, Rank rnk) throws SQLException{
+	public int update(Connection conn, int index, int score, String date) throws SQLException{
 		// TODO Auto-generated method stub
 		int result = 0;
 		String sql = null;
@@ -156,12 +156,12 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "update Rank set score = ?, cleartime = ? where deptno = ?";
+			sql = "update Rank set score = ?, cleartime = ? where RANKINDEX = ?";
 		
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rnk.getScore());
-			pstmt.setString(2, rnk.getCleartime());
-			pstmt.setInt(3, rnk.getSerialNum());
+			pstmt.setInt(1, score);
+			pstmt.setString(2, date);
+			pstmt.setInt(3, index);
 		
 			result = pstmt.executeUpdate();
 		}

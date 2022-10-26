@@ -13,14 +13,14 @@ public class RankUpdateService {
 
 	RankDao dao = new RankDaoOracle();
 	
-	public void update(Rank rank, int index) {
+	public void update(int index, int score, String cleardate) {
 		// TODO Auto-generated method stub
 
 		Connection conn = null;
 		try {
 			conn = GenericUtil.getConnection();
 			
-			dao.update(conn,rank);
+			dao.update(conn,index, score, cleardate);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
