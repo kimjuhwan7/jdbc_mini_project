@@ -28,13 +28,10 @@ public class GameController implements Controller {
 		GameInsert insertion = new GameInsert();
 
 		gaGuessing = new NumberGuessing();
-		insertion.InsertGame(gaGuessing.getSerialnum(), "NumberGuessing", "Guess Correct Number in 5 time", "Puzzle");
 
 		hi99 = new Hi99();
-		insertion.InsertGame(hi99.getSerialnum(), "Hi99", "Solve Multiplication Table in 30 Sec", "Math");
 
 		tacToe = new TicTacToe();
-		insertion.InsertGame(tacToe.getSerialnum(), "TicTacToe", "Check one line first", "Puzzle");
 
 	}
 
