@@ -147,7 +147,7 @@ public class RankDaoOracle implements RankDao{
 	}
 
 	@Override
-	public int update(Connection conn, Rank rnk) throws SQLException{
+	public int update(Connection conn, int index, int score, String date) throws SQLException{
 		// TODO Auto-generated method stub
 		int result = 0;
 		String sql = null;
@@ -156,12 +156,12 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "update Rank set score = ?, cleartime = ? where deptno = ?";
+			sql = "update Rank set score = ?, cleartime = ? where RANKINDEX = ?";
 		
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rnk.getScore());
-			pstmt.setString(2, rnk.getCleartime());
-			pstmt.setInt(3, rnk.getSerialNum());
+			pstmt.setInt(1, score);
+			pstmt.setString(2, date);
+			pstmt.setInt(3, index);
 		
 			result = pstmt.executeUpdate();
 		}
