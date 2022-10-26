@@ -29,7 +29,7 @@ public class RankDaoOracle implements RankDao{
 		
 			while(rs.next())
 			{
-				list.add(new Rank(rs.getInt("serialnum"), rs.getInt("exploiternum"), rs.getInt("score"), rs.getString("cleartime")));
+				list.add(new Rank(rs.getInt("exploiternum"), rs.getInt("serialnum"), rs.getInt("score"), rs.getString("cleartime")));
 			}
 		}
 		finally 

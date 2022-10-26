@@ -23,7 +23,7 @@ public class RankInsertController{
 	public void function(int serialnum,int score, LocalDate cleardate) {
 		// TODO Auto-generated method stub
 		
-		service.Insert(new Rank(serialnum, Main.user.getUsernum(),score,cleardate.toString()));
+		service.Insert(new Rank(Main.user.getUsernum(), serialnum, score, cleardate.toString()));
 		
 	}
 

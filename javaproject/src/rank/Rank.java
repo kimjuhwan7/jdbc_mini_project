@@ -68,7 +68,7 @@ public class Rank {
 			return "이름: "+ this.nickname +  "\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
 		
 		else if (gamename != null)
-			return "게임 명 : "+ this.nickname +  "\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
+			return "게임 명 : "+ this.gamename +  "\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
 		
 		else
 			return "클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
