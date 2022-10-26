@@ -98,10 +98,10 @@ public class Hi99 extends Thread {
 
 	}
 
-	public static void main(String[] args) {
-		Hi99 hi99 = new Hi99();
-		hi99.game_Start();
-	}
+//	public static void main(String[] args) {
+//		Hi99 hi99 = new Hi99();
+//		hi99.game_Start();
+//	}
 
 	public int getSerialNum() {
 		return Hi99.serial_num;

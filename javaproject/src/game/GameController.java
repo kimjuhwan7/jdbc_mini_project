@@ -1,5 +1,6 @@
 package game;
 
+import AgameMain.Command;
 import AgameMain.Main;
 import exploiter.controller.Controller;
 
@@ -32,6 +33,7 @@ public class GameController implements Controller {
 		tacToe = new TicTacToe();
 		insertion.InsertGame(tacToe.getSerialnum(), "TicTacToe", "Check one line first", "Puzzle");
 
+		
 	}
 
 	@Override
@@ -51,7 +53,7 @@ public class GameController implements Controller {
 			tacToe.gameStart();
 			break;
 		case 4:
-			
+			Command.userCommand();
 			break;
 		}
 
