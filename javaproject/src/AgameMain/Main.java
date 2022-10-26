@@ -38,7 +38,7 @@ public class Main {
 	
 	public static void userMenu() {
 		System.out.println("원하시는 메뉴 번호를 입력하세요. .");
-		System.out.println("1. 게임시작");
+		//System.out.println("1. 게임시작");
 		System.out.println("2. 랭크확인");
 		System.out.println("3. 로그아웃");
 		System.out.println("4. 회원수정");
