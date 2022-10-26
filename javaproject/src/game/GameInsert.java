@@ -7,7 +7,7 @@ import generic.GenericUtil;
 
 public class GameInsert {
 	
-	private GameInsert instance = null;
+	private static GameInsert instance = null;
 	GameDaoOracle dao = new GameDaoOracle();
 	
 	GameInsert GetInstance()
@@ -17,8 +17,6 @@ public class GameInsert {
 		
 		return instance;
 	}
-	
-	//GameInsert service = new GameInsert();
 	
 	public void InsertGame(int serialnum, String gamename, String discription, String genre)
 	{

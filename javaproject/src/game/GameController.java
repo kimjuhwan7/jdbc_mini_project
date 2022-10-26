@@ -5,7 +5,7 @@ import exploiter.controller.Controller;
 
 public class GameController implements Controller {
 
-	private static GameController instance = new GameController();
+	private static GameController instance = null;
 
 	public GameController GetInstance() {
 		if (instance == null)
