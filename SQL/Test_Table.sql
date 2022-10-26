@@ -2,9 +2,10 @@
 CREATE TABLE exploiter (
   exploiternum      NUMBER(4) PRIMARY KEY,
   id    VARCHAR2(40) NOT NULL,
-  password   VARCHAR2(40) NOT NULL,
+  password   VARCHAR2(100) NOT NULL,
   nickname       VARCHAR2(16) NOT NULL,
-  admin     INT
+  admin     INT,
+  salt varchar2(20)
 );
 
 CREATE TABLE  Game (
@@ -26,16 +27,10 @@ CREATE TABLE Rank (
 );
 
 
+INSERT INTO exploiter VALUES(exploiter_index.nextval, 'Admin', 'Admin', 'GM', 1, e0a8abb8451ee39565fe);
 
-INSERT INTO exploiter VALUES(1, 'Admin', 'Admin', 'GM', 1);
-INSERT INTO exploiter VALUES(2, 'user a', 'aaaa', 'beginner', 0);
-INSERT INTO exploiter VALUES(3, 'user b', 'bbbb', 'experter', 0);
-INSERT INTO exploiter VALUES(4, 'user c', 'cccc', 'master', 0);
-INSERT INTO exploiter VALUES(5, 'user d', 'dddd', 'challenger', 0);
-INSERT INTO exploiter VALUES(6, 'user e', 'eeee', 'progammer', 0);
 
 insert into game values(1,'홀짝','알잖아','도박');
 insert into game values(2,'가위바위보','설명해야되나','도박');
 
 INSERT INTO Rank VALUES(RANK_INDEX.nextval, 3, 1, 300, '22/10/11');
-commit;
