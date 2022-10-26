@@ -40,6 +40,7 @@ public class Hi99 {
 		}
 		if (score == 100) {
 			System.out.println("만점입니다! 대단합니다!");
+			reGame();
 		} else {
 			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다." + "\n아쉽게만점을 받지 못했습니다.\n");
 			reGame();
@@ -48,13 +49,11 @@ public class Hi99 {
 
 	private void reGame() {
 		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
-		String yes = "네";
-		String no = "아니요";
 
 		String sys = Main.sc.nextLine();
-		if (sys.equals(yes)) {
+		if (sys.equals("네") == true) {
 			game_Start();
-		} else if (sys.equals(no)) {
+		} else if (sys.equals("아니오") == true) {
 			exitGame();
 		} else {
 			System.out.println("네/아니오 로만 작성해 주십시오");
@@ -71,11 +70,6 @@ public class Hi99 {
 		System.out.println("메뉴로 돌아갑니다.");
 		System.out.println();
 
-	}
-
-	public static void main(String[] args) {
-		Hi99 hi99 = new Hi99();
-		hi99.game_Start();
 	}
 
 	public int getSerialnum() {
