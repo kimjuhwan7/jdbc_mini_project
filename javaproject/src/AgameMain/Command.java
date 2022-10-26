@@ -33,29 +33,29 @@ public class Command {
 
 		command.put("menu", menu); /* 분기1 : 메인 메뉴 */
 		menu.add(null);
-		menu.add(new LogInController()); 		// 1. 로그인
-		menu.add(new InsertController()); 		// 2. 회원가입
-		menu.add(new ExitController()); 		// 3. 프로그램 종료
+		menu.add(LogInController.getInstance()); 		// 1. 로그인
+		menu.add(InsertController.getInstance()); 		// 2. 회원가입
+		menu.add(ExitController.getInstance()); 		// 3. 프로그램 종료
 		
 		command.put("user", user); /* 분기2 : 회원 메뉴 */
 		user.add(null);
 		GameController gameCtrl = GameController.GetInstance();
         user.add(gameCtrl); 					// 1. 게임시작
 		user.add(new RankResearchController()); // 2. 랭크확인
-		user.add(new Log_outController()); 		// 3. 로그아웃
-		user.add(new UpdateController()); 		// 4. 회원수정 
-		user.add(new DeleteController()); 		// 5. 회원탈퇴
+		user.add(Log_outController.getInstance()); 		// 3. 로그아웃
+		user.add(UpdateController.getInstace()); 		// 4. 회원수정 
+		user.add(DeleteController.getInstance()); 		// 5. 회원탈퇴
 
 		command.put("admin", admin); /* 분기2 : 관리자 메뉴 */
 		admin.add(null);
-		admin.add(new UpdateController());			// 1. 회원수정
-		admin.add(new DeleteController()); 			// 2. 회원삭제
-		admin.add(new SelectController());			// 3. 회원출력
-		admin.add(new ResearchByIdController()); 	// 4. 회원검색
+		admin.add(UpdateController.getInstace());			// 1. 회원수정
+		admin.add(DeleteController.getInstance()); 			// 2. 회원삭제
+		admin.add(SelectController.getInstance());			// 3. 회원출력
+		admin.add(ResearchByIdController.getInstance()); 	// 4. 회원검색
 		admin.add(new RankResearchController()); 	// 5. 랭크검색
 		admin.add(new RankDeleteController()); 		// 6. 랭크삭제
 		admin.add(new RankUpdateController()); 		// 7. 랭크수정
-		admin.add(new Log_outController());			// 8. 로그아웃 -> 메인메뉴로 이동
+		admin.add(Log_outController.getInstance());			// 8. 로그아웃 -> 메인메뉴로 이동
 		
 	}
 	
