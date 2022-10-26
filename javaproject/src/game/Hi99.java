@@ -103,7 +103,7 @@ public class Hi99 extends Thread {
 //		hi99.game_Start();
 //	}
 
-	public int getSerialNum() {
+	public int getSerialnum() {
 		return Hi99.serial_num;
 	}
 }
