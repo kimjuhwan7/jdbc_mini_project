@@ -1,8 +1,11 @@
 package game;
 
+import java.util.HashMap;
+
 import AgameMain.Command;
 import AgameMain.Main;
 import exploiter.controller.Controller;
+import java.util.*;
 
 public class GameController implements Controller {
 
@@ -28,12 +31,11 @@ public class GameController implements Controller {
 		insertion.InsertGame(gaGuessing.getSerialnum(), "NumberGuessing", "Guess Correct Number in 5 time", "Puzzle");
 
 		hi99 = new Hi99();
-		insertion.InsertGame(hi99.getSerialNum(), "Hi99", "Solve Multiplication Table in 30 Sec", "Math");
+		insertion.InsertGame(hi99.getSerialnum(), "Hi99", "Solve Multiplication Table in 30 Sec", "Math");
 
 		tacToe = new TicTacToe();
 		insertion.InsertGame(tacToe.getSerialnum(), "TicTacToe", "Check one line first", "Puzzle");
 
-		
 	}
 
 	@Override
@@ -53,7 +55,9 @@ public class GameController implements Controller {
 			tacToe.gameStart();
 			break;
 		case 4:
+			
 			Command.userCommand();
+			
 			break;
 		}
 

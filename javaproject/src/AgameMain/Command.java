@@ -17,8 +17,7 @@ import game.GameController;
 import rank.controller.RankDeleteController;
 import rank.controller.RankResearchController;
 
-//Main.Command
-//메인.커멘드
+
 public class Command {
 	public Map<String, List<Controller>> command;
 		
