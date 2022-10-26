@@ -7,9 +7,6 @@ import AgameMain.Main;
 import rank.controller.RankInsertController;
 import rank.controller.RankResearchController;
 
-//Hi99 hi = new Hi99();
-//hi.hi_start();
-
 public class Hi99 extends Thread {
 	Random random = new Random();
 	String pattern = "^[0-9]*$";// 숫자만
@@ -41,15 +38,8 @@ public class Hi99 extends Thread {
 		// start_count 끝나면 실행
 		System.out.println("시간이 종료 되었습니다.");
 		System.out.println("총 스코어 " + score + "입니다. 축하합니다");
-		
-		
-		RankInsertController insertctl = new RankInsertController();
-		 
-		insertctl.function(serial_num, score, Main.now);
-		
-		RankResearchController showRanking = new RankResearchController();
-		
-		showRanking.function(this.serial_num);
+		reGame();
+
 	}
 
 	public void game_Start() {
@@ -87,8 +77,33 @@ public class Hi99 extends Thread {
 		}
 	}
 
+	private void reGame() {
+		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
+		String sc = Main.sc.nextLine();
+		if (sc.equals("네")) {
+			game_Start();
+		} else if (sc.equals("아니오")) {
+			exitGame();
+		}
+	}
+
+	private static void exitGame() {
+		RankInsertController insertctl = new RankInsertController();
+		insertctl.function(serial_num, score, Main.now);
+		RankResearchController showRanking = new RankResearchController();
+		showRanking.function(serial_num);
+		System.out.println("\nGAME OVER");
+		System.out.println("메뉴로 돌아갑니다.");
+		System.out.println();
+
+	}
+
+	public static void main(String[] args) {
+		Hi99 hi99 = new Hi99();
+		hi99.game_Start();
+	}
+
 	public int getSerialNum() {
-		// TODO Auto-generated method stub
-		return serial_num;
+		return Hi99.serial_num;
 	}
 }
