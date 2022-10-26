@@ -205,7 +205,7 @@ public class TicTacToe {
 	}
 
 	public void gameStart() {
-		System.out.println("3 x 3 TicTacToe Game Start!!");
+		System.out.println("3 x 3 TicTacToe \n Computer VS Player \n Game Start!!");
 		char[][] board = { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
 		printBoard(board);
 		while (true) {
