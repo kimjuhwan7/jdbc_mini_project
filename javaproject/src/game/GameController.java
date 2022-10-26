@@ -56,22 +56,10 @@ public class GameController implements Controller {
 			break;
 		case 4:
 			
-			Command.userCommand();
+//			Command.userCommand();
 			
 			break;
 		}
-
-//		List<Game> list = service.select();
-//
-//		if (list != null && !list.isEmpty()) {
-//			for (Game e : list) {
-//				System.out.println(e);
-//			}
-//		} else {
-//			System.out.println(list);
-//
-//			System.out.println("검색 결과 없음");
-//		}
 
 	}
 }

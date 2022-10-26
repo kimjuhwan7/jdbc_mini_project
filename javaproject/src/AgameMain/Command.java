@@ -66,23 +66,10 @@ public class Command {
 		
 		return instance;
 	}
-	
-	public List<Controller> GetUserContainer()
-	{
-		return user;
-	}
-	public List<Controller> GetAdminContainer()
-	{
-		return admin;
-	}
-	public List<Controller> GetMenuContainer()
-	{
-		return menu;
-	}
 
 	public static void userCommand() {
 		
-		Main.userMenu();
+		userMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
 		String user = "user";
@@ -108,7 +95,7 @@ public class Command {
 	
 	public static void adminCommand() {
 		
-		Main.adminMenu();
+		adminMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
 		String user = "admin";
@@ -133,7 +120,7 @@ public class Command {
 	}
 	
 	public static void menuCommand() {
-		Main.menu();
+		menu();
 		
 		Command command = AgameMain.Command.GetInstance();
 		
@@ -155,7 +142,37 @@ public class Command {
 		
 	}
 	
+
+	public static void menu() {
+		System.out.println("ByeMedia에 오신 걸 환영합니다.");
+		System.out.println("1. 로그인");
+		System.out.println("2. 회원가입");
+		System.out.println("3. 종료");
+	}
 	
+	public static void userMenu() {
+		System.out.println("원하시는 메뉴 번호를 입력하세요. .");
+		System.out.println("1. 게임시작");
+		System.out.println("2. 랭크확인");
+		System.out.println("3. 로그아웃");
+		System.out.println("4. 회원수정");
+		System.out.println("5. 회원탈퇴");
+		
+	}
+	
+	public static void adminMenu() {
+		System.out.println("원하시는 메뉴 번호를 입력하세요. .");
+		System.out.println("1. 회원수정");
+		System.out.println("2. 회원삭제");
+		System.out.println("3. 회원출력");
+		System.out.println("4. 회원검색");
+		System.out.println("5. 랭크검색");
+		System.out.println("6. 랭크삭제");
+		System.out.println("7. 랭크수정");
+		System.out.println("8. 로그아웃");
+
+	}
+
 	
 	
 }
