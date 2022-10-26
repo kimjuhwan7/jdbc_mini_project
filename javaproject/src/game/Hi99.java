@@ -24,7 +24,7 @@ public class Hi99 {
 	public void makeMul() {
 		score = 0;
 		i = 0;
-		while (i < 2) {
+		while (i < 10) {
 			i++;
 			x = random.nextInt(9) + 1;
 			y = random.nextInt(9) + 1;
