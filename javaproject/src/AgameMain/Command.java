@@ -85,11 +85,12 @@ public class Command {
 		Main.userMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
-		int select=0;
+		String user = "user";
 		
 		try {
 			
-		select = Integer.parseInt(Main.sc.nextLine());
+		int select = Integer.parseInt(Main.sc.nextLine());
+		command.command.get(user).get(select).process();
 		
 		if(select < 1 || select > 5) {
 			throw new Exception();
@@ -98,10 +99,10 @@ public class Command {
 		
 		} catch(Exception e){
 			System.out.println("1~5 사이의 값을 입력해주세요.");
+			System.out.println();
 		}
 		
-		String user = "user";
-		command.command.get(user).get(select).process();
+		
 		
 	}
 	
@@ -110,12 +111,13 @@ public class Command {
 		Main.adminMenu();
 		
 		Command command = AgameMain.Command.GetInstance();
+		String user = "admin";
 		
-		int select = 0;
 		
 		try {
 			
-			select = Integer.parseInt(Main.sc.nextLine());
+			int select = Integer.parseInt(Main.sc.nextLine());
+			command.command.get(user).get(select).process();
 			
 			if(select < 1 || select > 8) {
 				throw new Exception();
@@ -124,10 +126,9 @@ public class Command {
 			
 			} catch(Exception e){
 				System.out.println("1~8 사이의 값을 입력해주세요.");
+				System.out.println();
 			}
 		
-		String user = "admin";
-		command.command.get(user).get(select).process();
 		
 	}
 	
@@ -136,11 +137,11 @@ public class Command {
 		
 		Command command = AgameMain.Command.GetInstance();
 		
-		int select = 0;
 		
 		try {
 			
-			select = Integer.parseInt(Main.sc.nextLine());
+			int select = Integer.parseInt(Main.sc.nextLine());
+			command.command.get("menu").get(select).process();
 			
 			if(select < 1 || select > 3) {
 				throw new Exception();
@@ -149,9 +150,9 @@ public class Command {
 			
 			} catch(Exception e){
 				System.out.println("1~3 사이의 값을 입력해주세요.");
+				System.out.println();
 			}
 		
-		command.command.get("menu").get(select).process();
 	}
 	
 	
