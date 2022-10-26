@@ -18,7 +18,7 @@ public class GameInsert {
 		return instance;
 	}
 	
-	GameInsert service = new GameInsert();
+	//GameInsert service = new GameInsert();
 	
 	public void InsertGame(int serialnum, String gamename, String discription, String genre)
 	{
