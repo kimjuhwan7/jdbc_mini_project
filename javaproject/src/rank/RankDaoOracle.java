@@ -133,7 +133,6 @@ public class RankDaoOracle implements RankDao{
 			pstmt.setString(4, rnk.getCleartime());
 		
 			result = pstmt.executeUpdate();
-			conn.commit();
 		}
 		finally 
 		{
@@ -157,10 +156,12 @@ public class RankDaoOracle implements RankDao{
 		
 		try
 		{
-			sql = "delete from Rank where rankindex = ?";
+			sql = "update Rank set score = ?, cleartime = ? where deptno = ?";
 		
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, rnk.getSerialNum());
+			pstmt.setInt(1, rnk.getScore());
+			pstmt.setString(2, rnk.getCleartime());
+			pstmt.setInt(3, rnk.getSerialNum());
 		
 			result = pstmt.executeUpdate();
 		}
