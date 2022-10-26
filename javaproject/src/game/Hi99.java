@@ -1,98 +1,68 @@
 package game;
 
-import java.awt.Taskbar.Feature;
 import java.util.Random;
-import java.util.regex.Pattern;
 
 import AgameMain.Main;
 import rank.controller.RankInsertController;
 import rank.controller.RankResearchController;
 
-public class Hi99 extends Thread {
-	Random random = new Random();
-	String pattern = "^[0-9]*$";// 숫자만
-	String val = "123456789"; // 대상문자열
-
-	int x;// 앞자리
-	int y;// 뒷자리
-	String z;// 사용자입력값
-	int answer;// 앞*뒤=결과값
-	static int score;// 총점
-	int plus = 10;// 추가점수
-	int count_down = 0;// 카운트 다운
-	int start_count = 2;// 잔여시간
-	static int serial_num = 2;// 게임 시리얼넘버
-	boolean state;// 스레드 상태
-
-	@Override
-	public void run() {// 스레드
-		String pattern = "^[0-9]*$";// 숫자만
-		System.out.println("구구단 게임을 시작합니다.");
-		System.out.println(start_count + "초 동안 문제를 빠르게 풀어주세요");
-		System.out.println("시작!");
-
-		try 
-		{
-			while (start_count > count_down) 
-			{
-				start_count--;
-				Thread.sleep(1000);// 1초
-				x = random.nextInt(9) + 1;
-				y = random.nextInt(9) + 1;
-				answer = x * y;// 곱셈 결과 값
-				System.out.print(x + " x " + y + " => ");
-				while (state) 
-				{
-					z = Main.sc.nextLine();// 사용자 입력
-					Boolean regex = Pattern.matches(pattern, z);
-					if (!regex) {
-						System.out.println("정수만 입력해주세요");
-						continue;
-					}
-					break;
-				}
-				if (answer == Integer.valueOf(z)) {
-					score += 10;
-					System.out.println("정답입니다! " + plus + "점 추가 " + "총점 =>" + score);
-				} 
-				else 
-					System.out.println("오답입니다! 정답-> " + answer + " 총점 =>" + score + " 다음문제");
-			}
-		}
-		catch (InterruptedException e) 
-			{e.printStackTrace();}
-		finally 
-		{
-			System.out.println("시간이 종료 되었습니다.");
-			System.out.println("총 스코어 " + score + "입니다. 축하합니다");
-		}
-		reGame();
-	}
+public class Hi99 {
+	int x; // 랜덤으로 생성 할 숫자
+	int y;
+	int z; // 사람이 적을 답
+	int answer; // 계산된 답
+	int i; // 문제반복
+	static int score; // 점수
+	static int serial_num = 2;
+	Random random = new Random(); // 랜덤숫자 생성
 
 	public void game_Start() {
-		Hi99 thread = new Hi99();
-
-		thread.start();// 스레드 실행 (run)
-		
+		System.out.println("구구단 게임을 시작합니다.");
+		makeMul();
 	}
 
-	private void reGame() {
-		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
-		String sc = Main.sc.nextLine();
-		System.out.println(sc);
-		if (sc.equals("네")) {
-			game_Start();
-		} else if (sc.equals("아니오")) {
-			exitGame();
+	public void makeMul() {
+		score = 0;
+		i = 0;
+		while (i < 2) {
+			i++;
+			x = random.nextInt(9) + 1;
+			y = random.nextInt(9) + 1;
+			answer = x * y; // 시스템 정답 저장
+			System.out.print(x + " X " + y + " = ");
+			z = Main.sc.nextInt(); // 사람이 적은 정답 저장
+			if (z == answer) {
+				System.out.println("정답입니다!");
+				score += 10;
+			} else {
+				System.out.println("오답입니다!");
+			}
 		}
-		else 
-		{
-			System.out.println("네 또는 아니오 로만 작성해 주십시오");
+		if (score == 100) {
+			System.out.println("만점입니다! 대단합니다!");
+		} else {
+			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다." + "\n아쉽게만점을 받지 못했습니다.\n");
 			reGame();
 		}
 	}
 
-	private void exitGame() {
+	private void reGame() {
+		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
+		String yes = "네";
+		String no = "아니요";
+
+		String sys = Main.sc.nextLine();
+		if (sys.equals(yes)) {
+			game_Start();
+		} else if (sys.equals(no)) {
+			exitGame();
+		} else {
+			System.out.println("네/아니오 로만 작성해 주십시오");
+			reGame();
+		}
+	}
+
+	private static void exitGame() {
 		RankInsertController insertctl = new RankInsertController();
 		insertctl.function(serial_num, score, Main.now);
 		RankResearchController showRanking = new RankResearchController();
@@ -101,6 +71,11 @@ public class Hi99 extends Thread {
 		System.out.println("메뉴로 돌아갑니다.");
 		System.out.println();
 
+	}
+
+	public static void main(String[] args) {
+		Hi99 hi99 = new Hi99();
+		hi99.game_Start();
 	}
 
 	public int getSerialnum() {
