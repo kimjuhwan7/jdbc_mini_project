@@ -20,6 +20,11 @@ public class NumberGuessing {
 	// static Scanner sc = new Scanner(System.in);
 	private static Random ran = new Random();
 	private static int randomNumber = ran.nextInt(100) + 1; // 정답(랜덤)
+	
+	public int getSerialnum()
+	{
+		return serialnum;
+	}
 
 	private static void printGame() {
 		System.out.println("***NUMBER GUESSING - 랜덤 숫자 맞추기 게임***");
@@ -116,7 +121,7 @@ public class NumberGuessing {
 		showRanking.function(serialnum);
 	}
 	
-	public static void gameStart() 
+	public void gameStart() 
 	{
 
 		state = STATE.START;
