@@ -5,3 +5,5 @@ ByeMedia  - jdbc_mini_project
 JAVA + JDBC  를 활용하여 콘솔로 나타낼 수 있는 3종미니게임 입니다.
 
 ```
+
+## 프로젝트 개념 및 설명
