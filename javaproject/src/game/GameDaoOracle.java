@@ -43,6 +43,8 @@ public class GameDaoOracle implements GameDao{
 		pstmt.setString(4, game.getGenre());
 		
 		result = pstmt.executeUpdate();
+		
+		conn.commit();
 		}
 		finally
 		{

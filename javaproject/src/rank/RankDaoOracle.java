@@ -121,18 +121,19 @@ public class RankDaoOracle implements RankDao{
 		String sql = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
+		System.out.println(rnk.toString());
 		try
 		{
-			sql = "insert into Rank value(RANK_INDEX.NEXTVAL,?,?,?,?)";
+			sql = "insert into Rank values(RANK_INDEX.NEXTVAL,?,?,?,?)";
 		
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setDouble(1, rnk.getSerialNum());
+			pstmt.setInt(1, rnk.getSerialNum());
 			pstmt.setInt(2, rnk.getExploiterNum());
 			pstmt.setInt(3, rnk.getScore());
 			pstmt.setString(4, rnk.getCleartime());
 		
 			result = pstmt.executeUpdate();
+			conn.commit();
 		}
 		finally 
 		{
@@ -149,7 +150,30 @@ public class RankDaoOracle implements RankDao{
 	@Override
 	public int update(Connection conn, Rank rnk) throws SQLException{
 		// TODO Auto-generated method stub
-		return 0;
+		int result = 0;
+		String sql = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try
+		{
+			sql = "delete from Rank where rankindex = ?";
+		
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, rnk.getSerialNum());
+		
+			result = pstmt.executeUpdate();
+		}
+		finally 
+		{
+			if(rs != null)
+			rs.close();
+		
+			if(pstmt != null)
+			pstmt.close();
+		}
+		
+		return result;
 	}
 
 	@Override

@@ -40,7 +40,8 @@ public class Command {
 		
 		command.put("user", user); // 분기2 : 회원 메뉴
 		user.add(null);
-        user.add(new GameController()); // 게임시작
+		GameController gameCtrl = GameController.GetInstance();
+        user.add(gameCtrl); // 게임시작
 		user.add(new RankResearchController()); // 랭크확인
 		user.add(new Log_outController()); // 로그아웃
 		user.add(new UpdateController()); // 회원수정 
@@ -52,7 +53,7 @@ public class Command {
 		admin.add(new DeleteController()); //회원삭제
 		admin.add(new SelectController()); // 회원출력
 		admin.add(new ResearchByIdController()); // 회원검색
-//		admin.add(new RankResearchController()); // 랭크검색
+		admin.add(new RankResearchController()); // 랭크검색
 		admin.add(new RankDeleteController()); // 랭크삭제
 //		admin.add(new RankInsertController()); // 랭크수정
 		admin.add(new Log_outController());// 로그아웃 -> 메인메뉴로 이동
