@@ -86,4 +86,9 @@ public class Hi99 extends Thread {
 			}
 		}
 	}
+
+	public int getSerialNum() {
+		// TODO Auto-generated method stub
+		return serial_num;
+	}
 }

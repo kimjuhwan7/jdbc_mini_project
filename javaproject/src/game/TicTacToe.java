@@ -14,6 +14,11 @@ public class TicTacToe {
 	private static Scanner scanner = new Scanner(System.in);
 	static int serial_num = 3;
 
+	public int getSerialnum()
+	{
+		return serial_num;
+	}
+	
 	// 게임이 끝나는 조건 우승 | 무승부
 	private static boolean isGameFinished(char[][] board) {
 
@@ -175,7 +180,7 @@ public class TicTacToe {
 		System.out.println("--------");
 	}
 	
-	private static void reGame() {
+	private void reGame() {
 		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
 		String sc = scanner.nextLine();
 		if(sc.equals("네")) {
@@ -185,7 +190,7 @@ public class TicTacToe {
 		}
 	}
 
-	private static void gameStart() {
+	public void gameStart() {
 		System.out.println("3 x 3 TicTacToe Game Start!!");
 		char[][] board = { { ' ', ' ', ' ' }, { ' ', ' ', ' ' }, { ' ', ' ', ' ' } };
 		printBoard(board);
