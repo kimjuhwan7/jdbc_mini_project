@@ -136,3 +136,4 @@ javaproject/.classpath
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+javaproject/.classpath
