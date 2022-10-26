@@ -8,9 +8,9 @@ import rank.service.RankResearchService;
 
 public class RankResearchController implements exploiter.controller.Controller{
 	
-	private static RankResearchController instance = new RankResearchController();
+	private static RankResearchController instance = null;
 	
-	RankResearchController GetInstance()
+	public static RankResearchController GetInstance()
 	{
 		if(instance == null)
 			instance = new RankResearchController();
@@ -26,13 +26,13 @@ public class RankResearchController implements exploiter.controller.Controller{
 		// TODO Auto-generated method stub		
 
 		System.out.println("보고자 하는 랭킹을 선택 해 주세요");
-		System.out.println("1.구구단 맞추기\t2.숫자 맞추기\t3.구구단\t4.종합 ");
+		System.out.println("1.숫자 맞추기\t2.구구단 맞추기\t3.틱택토\t4.종합 ");
 		int select = Integer.parseInt(Main.sc.nextLine());
 		if(select == 4)
 		{
 			List<Rank> rank = service.researchAll();
 		
-			if(rank != null)
+			if(rank != null && rank.size() != 0)
 			{
 				for(Rank r : rank)
 					System.out.println(r.toString());
@@ -43,8 +43,7 @@ public class RankResearchController implements exploiter.controller.Controller{
 		else 
 			{
 				List<Rank> rank = service.research(select);
-				System.out.println(rank.size());
-				if(rank != null)
+				if(rank != null && rank.size() != 0)
 				{
 					for(Rank r : rank)
 						System.out.println(r.toString());
@@ -59,7 +58,7 @@ public class RankResearchController implements exploiter.controller.Controller{
 
 			List<Rank> rank = service.research(num);
 		
-			if(rank != null)
+			if(rank != null && rank.size() != 0)
 			{
 				for(Rank r : rank)
 					System.out.println(r.toString());

@@ -9,7 +9,7 @@ public class GameController implements Controller {
 
 	private static GameController instance = new GameController();
 	
-	public GameController GetInstance()
+	public static GameController GetInstance()
 	{
 		if(instance == null)
 			instance = new GameController();
@@ -25,7 +25,7 @@ public class GameController implements Controller {
 	
 	
 	
-	GameController()
+	private GameController()
 	{
 
 		GameInsert insertion = new GameInsert();
