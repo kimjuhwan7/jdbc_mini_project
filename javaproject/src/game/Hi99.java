@@ -88,6 +88,11 @@ public class Hi99 extends Thread {
 		} else if (sc.equals("아니오")) {
 			exitGame();
 		}
+		else 
+		{
+			System.out.println("네/아니오 로만 작성해 주십시오");
+			reGame();
+		}
 	}
 
 	private static void exitGame() {
@@ -100,11 +105,6 @@ public class Hi99 extends Thread {
 		System.out.println();
 
 	}
-
-//	public static void main(String[] args) {
-//		Hi99 hi99 = new Hi99();
-//		hi99.game_Start();
-//	}
 
 	public int getSerialnum() {
 		return Hi99.serial_num;

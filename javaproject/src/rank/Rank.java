@@ -64,7 +64,10 @@ public class Rank {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		if(nickname != null)
+		if (gamename != null && nickname != null)
+			return "게임 명 : "+ this.gamename + "\t닉네임 :" + this.nickname + "\t\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
+		
+		else if(nickname != null)
 			return "이름: "+ this.nickname +  "\t클리어 점수 : " + this.score + "\t클리어 일 : " + this.cleartime;
 		
 		else if (gamename != null)
