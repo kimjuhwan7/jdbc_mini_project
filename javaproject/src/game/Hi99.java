@@ -73,13 +73,11 @@ public class Hi99 extends Thread {
 		Hi99 thread = new Hi99();
 
 		thread.start();// 스레드 실행 (run)
-		
 	}
 
 	private void reGame() {
 		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
 		String sc = Main.sc.nextLine();
-		System.out.println(sc);
 		if (sc.equals("네")) {
 			game_Start();
 		} else if (sc.equals("아니오")) {
