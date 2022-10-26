@@ -40,7 +40,7 @@ public class GameController implements Controller {
 
 	@Override
 	public void process() {
-		System.out.println("게임을 선택해 주세요 1, 2, 3");
+		System.out.println("게임을 선택해 주세요 1. 숫자 맞추기 2. 구구단 빨리 맞추기 3. 틱택톡");
 		System.out.println("게임 선택화면을 나가시려면 4번을 눌러주세요");
 		int result = Main.sc.nextInt();
 
