@@ -46,7 +46,7 @@ public class GameController implements Controller {
 
 		switch (result) {
 		case 1:
-			gaGuessing.gameStart();
+			gaGuessing.gameStart();	
 			break;
 		case 2:
 			hi99.game_Start();
