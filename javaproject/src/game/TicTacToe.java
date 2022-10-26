@@ -181,13 +181,27 @@ public class TicTacToe {
 	}
 	
 	private void reGame() {
-		System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
-		String sc = scanner.nextLine();
-		if(sc.equals("네")) {
-			gameStart();
-		}else if(sc.equals("아니오")) {
-			exitGame();
+		
+		while(true) {
+			System.out.println("한번 더 플레이 하시겠습니까? (네 | 아니오) ");
+			String sc = scanner.nextLine();
+			
+			if(sc.equals("네")) {
+				gameStart();
+				break;
+			}else if(sc.equals("아니오")) {
+				exitGame();
+				break;
+			}else{
+				System.out.println("잘못된 입력입니다.");
+				
+				continue;
+			}
+			
 		}
+
+
+		
 	}
 
 	public void gameStart() {
