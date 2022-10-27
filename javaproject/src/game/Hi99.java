@@ -42,12 +42,12 @@ public class Hi99 {
 			System.out.println("만점입니다! 대단합니다!");
 			System.out.println();
 			reGame();
-		} else if (score < 60) {
+		} else if (score > 60) {
 			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다.");
 			System.out.println("아쉽게만점을 받지 못했습니다.");
 			System.out.println();
 			reGame();
-		} else if (score < 20) {
+		} else {
 			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다.");
 			System.out.println("분발하셔야 합니다.");
 			System.out.println();
