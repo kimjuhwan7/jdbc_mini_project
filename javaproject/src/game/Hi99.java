@@ -28,9 +28,9 @@ public class Hi99 {
 			i++;
 			x = random.nextInt(9) + 1;
 			y = random.nextInt(9) + 1;
-			answer = x * y; // 시스템 정답 저장
+			answer = x * y;
 			System.out.print(x + " X " + y + " = ");
-			z = Main.sc.nextInt(); // 사람이 적은 정답 저장
+			z = Main.sc.nextInt();
 			if (z == answer) {
 				System.out.println("정답입니다!");
 				score += 10;// 총점 추가
@@ -38,13 +38,18 @@ public class Hi99 {
 				System.out.println("오답입니다!");
 			}
 		}
-		if (score == 100) {// 100점일 경우
+		if (score == 100) {
 			System.out.println("만점입니다! 대단합니다!");
 			System.out.println();
 			reGame();
-		} else if (score < 100) {// 100점 미만일 경우
+		} else if (score < 60) {
 			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다.");
 			System.out.println("아쉽게만점을 받지 못했습니다.");
+			System.out.println();
+			reGame();
+		} else if (score < 20) {
+			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다.");
+			System.out.println("분발하셔야 합니다.");
 			System.out.println();
 			reGame();
 		}
