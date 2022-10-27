@@ -21,11 +21,8 @@ public class GameController implements Controller {
 	NumberGuessing gaGuessing = null;
 	Hi99 hi99 = null;
 	TicTacToe tacToe = null;
-	GameService service = new GameService(new GameDaoOracle());
 
 	public GameController() {
-
-		GameInsert insertion = new GameInsert();
 
 		gaGuessing = new NumberGuessing();
 
