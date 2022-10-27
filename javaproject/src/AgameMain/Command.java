@@ -28,6 +28,9 @@ public class Command {
 	
 	private static Command instance = new Command();
 
+	// Command 클래스 하나에서 UserCommand, AdminCommand, MenuCommand를 다 구성하는 것 보단
+	// 각자 클래스를 분할해서 의존성을 분할하는 방식이 나았을 것 같지만 시간상의 문제로 분할하지 못함 >> 아쉬운점
+	// 무분별한 객체의 생성을 막고자 Controller단을 Singleton 구성 후 getInstance 메소드를 호출하여 객체를 받아와서 기능 실행
 	private Command() {
 		command = new HashMap<>();
 

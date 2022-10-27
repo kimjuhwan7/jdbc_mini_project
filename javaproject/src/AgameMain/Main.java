@@ -18,7 +18,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		while (true) {
-			
+			// 로그인 정보를 받아오는 Main.user에 담긴 정보를 판단하여 메뉴 분기
 			if(Main.user==null) {
 				Command.menuCommand();
 			} else if(Main.user.getAdmin() == 0) {
