@@ -6,7 +6,7 @@
 JAVA + JDBC  를 활용하여 콘솔로 나타낼 수 있는 3종 미니게임
 
 
-> 회원가입 및 로그인을 하여 다양한 게임을 플레이하고, 게임랭킹을 확인할 수 있는 프로그램입니다. <br>
+> 회원가입 및 로그인을 하여 다양한 콘솔게임을 플레이하고, 게임랭킹을 확인할 수 있는 프로그램입니다. <br>
 
 작업자 : [@dabinHam](https://github.com/dabinHam "@dabinHam"), [@DongWon1215](https://github.com/DongWon1215 "@DongWon1215"), [@jinsol1997](https://github.com/jinsol1997 "@jinsol1997"), [@jennakim1007](https://github.com/jennakim1007 "@jennakim1007"), [@kimjuhwan7](https://github.com/kimjuhwan7 "@kimjuhwan7")
 
