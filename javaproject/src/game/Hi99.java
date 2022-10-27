@@ -7,8 +7,8 @@ import rank.controller.RankInsertController;
 import rank.controller.RankResearchController;
 
 public class Hi99 {
-	int x; // 랜덤으로 생성 할 숫자
-	int y;
+	int x; // 랜덤으로 생성 할 숫자_1
+	int y; // 랜덤으로 생성 할 숫자_2
 	int z; // 사람이 적을 답
 	int answer; // 계산된 답
 	int i; // 문제반복
@@ -33,15 +33,15 @@ public class Hi99 {
 			z = Main.sc.nextInt(); // 사람이 적은 정답 저장
 			if (z == answer) {
 				System.out.println("정답입니다!");
-				score += 10;
+				score += 10;// 총점 추가
 			} else {
 				System.out.println("오답입니다!");
 			}
 		}
-		if (score == 100) {
+		if (score == 100) {// 100점일 경우
 			System.out.println("만점입니다! 대단합니다!");
 			reGame();
-		} else if (score < 100) {
+		} else if (score < 100) {// 100점 미만일 경우
 			System.out.println("최종점수는 100점 만점 중 " + score + " 점입니다." + "\n아쉽게만점을 받지 못했습니다.\n");
 			reGame();
 		}
@@ -61,7 +61,6 @@ public class Hi99 {
 			} else {
 				System.out.println("네/아니오 로만 작성해 주십시오");
 				continue;
-
 			}
 		}
 	}
