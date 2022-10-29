@@ -1,3 +1,4 @@
+
 package game;
 
 import java.util.Random;
@@ -19,9 +20,8 @@ public class TicTacToe {
 		return serial_num;
 	}
 	
-	// 게임이 끝나는 조건 우승 | 무승부
+	// 승자 확인 기능 
 	private static boolean isGameFinished(char[][] board) {
-
 		// 플레이어 승리시 10점 획득
 		if (hasContestantWon(board, 'X')) {
 			printBoard(board);
@@ -38,7 +38,6 @@ public class TicTacToe {
 			System.out.println("지금까지 획득한 점수는 총" + score + "점 입니다.");
 			return true;
 		}
-
 		
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board[i].length; j++) {
@@ -47,7 +46,6 @@ public class TicTacToe {
 				}
 			}
 		}
-
 		printBoard(board);
 		System.out.println("무승부!");
 		return true;
@@ -97,7 +95,7 @@ public class TicTacToe {
 		placeMove(board, userInput, 'X');
 	}
 
-	// 움직임 확인 기능
+	// 이동한 위치가 유효한지 확인기능 
 	private static boolean isValidMove(char[][] board, String position) {
 		switch (position) {
 		case "1":
@@ -123,7 +121,7 @@ public class TicTacToe {
 		}
 	}
 
-	// 움직임을배치하는 기능 = placeMove()
+	// 움직임을 배치하는 기능
 	private static void placeMove(char[][] board, String position, char symbol) {
 		switch (position) {
 		case "1":
@@ -158,6 +156,7 @@ public class TicTacToe {
 		}
 	}
 
+	// 플레이보드 출력 
 	private static void printBoard(char[][] board) {
 		System.out.println("--------");
 		System.out.print((board[0][0]));
